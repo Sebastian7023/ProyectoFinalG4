@@ -1,0 +1,157 @@
+:root {
+            --primary-color: #d35678;
+            --secondary-color: #f8d7da;
+            --dark-color: #5d4037;
+            --light-color: #fff9f9;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #5d4037;
+            background-color: var(--light-color);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/portaadaa.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #b94c61;
+            border-color: #b94c61;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 15px auto;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-card {
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .testimonial-card {
+            padding: 2rem;
+            background-color: white;
+            border-radius: 15px;
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+        
+        .pricing-card {
+            text-align: center;
+        }
+        
+        .pricing-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem;
+        }
+        
+        .pricing-body {
+            padding: 2rem;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+        
+        .gallery-item img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+        
+        .brand-img {
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        
+        .brand-img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
