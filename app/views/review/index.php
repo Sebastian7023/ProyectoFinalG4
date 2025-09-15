@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="../../assets/css/home.css" rel="stylesheet">
-</head>
+    <link href="../../assets/css/review.css" rel="stylesheet"> </head>
 <body>
     <div class="container py-5">
         <h1 class="mb-4 section-title text-center">Deja tu Reseña</h1>
@@ -42,8 +42,7 @@
                             <i class="bi bi-star text-warning"></i>
                             <i class="bi bi-star text-warning"></i>
                             <i class="bi bi-star text-warning"></i>
-                            <!-- Puedes reemplazar esto por radio buttons ocultos si quieres funcionalidad real -->
-                        </div>
+                            </div>
                     </div>
                     <div class="mb-3">
                         <label for="comentario" class="form-label">Comentario</label>
