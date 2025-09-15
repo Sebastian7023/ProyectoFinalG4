@@ -12,13 +12,14 @@ CREATE TABLE client (
   registrationDate DATE DEFAULT (CURRENT_DATE) NOT NULL
 );
 
--- Tabla Usuarios 
+-- Tabla Usuarios (CORREGIDA)
 CREATE TABLE users (
-  userName varchar(50) PRIMARY KEY,
+  id int AUTO_INCREMENT PRIMARY KEY, 
+  userName varchar(50) UNIQUE NOT NULL,
   userPassword varchar(255) NOT NULL,
   fullName varchar(255) NOT NULL,
   rol varchar(45) NOT NULL,
-  specialty varchar(100) NOT NULL,
+  specialty varchar(100) NULL,
   email varchar(255) UNIQUE NOT NULL,
   isActive tinyint(1) DEFAULT 1 NOT NULL 
 );
@@ -33,18 +34,18 @@ CREATE TABLE serviceRequest (
   isAvailable tinyint(1) DEFAULT 1 NOT NULL 
 );
 
--- Tabla Cita 
+-- Tabla Cita
 CREATE TABLE appointment (
   id int AUTO_INCREMENT PRIMARY KEY,
   clientId int NOT NULL,
   serviceId int NOT NULL,
-  stylistUser varchar(50) NOT NULL,
+  userId int NOT NULL,  -- Cambiado de idUser a userId para mayor claridad
   appointmentDateTime DATETIME NOT NULL,
   appointmentStatus varchar(20) DEFAULT 'pending' NOT NULL, -- pending, confirmed, completed, cancelled
   notes varchar(1000), 
-  FOREIGN KEY (clientId) REFERENCES client(id),
-  FOREIGN KEY (serviceId) REFERENCES serviceRequest(id),
-  FOREIGN KEY (stylistUser) REFERENCES stylist(userName),
+  FOREIGN KEY (clientId) REFERENCES client(id) ON DELETE CASCADE,
+  FOREIGN KEY (serviceId) REFERENCES serviceRequest(id) ON DELETE CASCADE,
+  FOREIGN KEY (userId) REFERENCES users(id) ON DELETE CASCADE,
   INDEX idx_appointment_datetime (appointmentDateTime)
 );
 
@@ -56,7 +57,7 @@ CREATE TABLE review (
   reviewComment varchar(500),
   reviewDate DATE DEFAULT (CURRENT_DATE) NOT NULL,
   response VARCHAR(500),
-  FOREIGN KEY (appointmentId) REFERENCES appointment(id),
+  FOREIGN KEY (appointmentId) REFERENCES appointment(id) ON DELETE CASCADE,
   CHECK (ratingValue BETWEEN 1 AND 5),
   INDEX idx_review_date (reviewDate)
 );
