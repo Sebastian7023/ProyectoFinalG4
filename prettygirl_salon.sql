@@ -61,3 +61,11 @@ CREATE TABLE review (
   CHECK (ratingValue BETWEEN 1 AND 5),
   INDEX idx_review_date (reviewDate)
 );
+
+--INSERTAR OBLIGATORIAMENTE
+INSERT INTO serviceRequest (serviceName, durationMinutes, servicePrice, serviceDescription, isAvailable) VALUES
+('Corte de Pelo', 45, 25.00, 'Incluye lavado y peinado.', 1),
+('Coloración', 90, 60.00, 'Tinte de cabello completo, incluye retoques.', 1),
+('Maquillaje', 60, 40.00, 'Maquillaje profesional para eventos especiales.', 1),
+('Manicura', 30, 15.00, 'Manicura completa con esmalte regular.', 1),
+('Tratamiento Facial', 75, 55.00, 'Limpieza profunda y mascarilla hidratante.', 1);
