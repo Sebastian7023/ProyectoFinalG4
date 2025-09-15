@@ -1,11 +1,9 @@
 :root {
-    /* Variables del layout.css */
     --primary-color: #d35678;
     --secondary-color: #f8d7da;
     --dark-color: #5d4037;
     --light-color: #fff9f9;
 
-    /* Variables del home.css (si son diferentes, se pueden usar las de layout) */
     --rosa-pastel: #f8d7da;
     --rosa-medio: #e9aab8;
     --rosa-oscuro: #d87a8a;
@@ -15,8 +13,8 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    color: var(--dark-color); /* Usa el color oscuro del layout */
-    background-color: var(--light-color); /* Usa el color claro del layout */
+    color: var(--dark-color);
+    background-color: var(--light-color);
 }
 
 .section-title {
@@ -24,7 +22,7 @@ body {
     font-weight: 700;
     text-align: center;
     margin-bottom: 40px;
-    color: var(--rosa-oscuro); /* Usa el color del home.css */
+    color: var(--rosa-oscuro);
 }
 
 /* Estilos específicos para la página de reseña */
@@ -48,7 +46,7 @@ body {
 .form-control:focus,
 .form-select:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 0.25rem rgba(211, 86, 120, 0.25); /* rgba del --primary-color */
+    box-shadow: 0 0 0 0.25rem rgba(211, 86, 120, 0.25);
 }
 
 .btn-primary {
@@ -60,18 +58,22 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #b94c61; /* Color de hover del layout */
-    border-color: #b94c61; /* Color de hover del layout */
+    background-color: #b94c61;
+    border-color: #b94c61;
     transform: translateY(-2px);
 }
 
 /* Estilos para las estrellas de calificación */
-.bi-star {
+.bi-star, .bi-star-fill {
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.2s;
 }
 
-.bi-star.text-warning {
-    color: #ffc107 !important; /* Mantiene el color estándar de Bootstrap para las estrellas, que es amarillo */
+.bi-star-fill.text-warning {
+    color: #ffc107 !important;
+}
+
+.bi-star {
+    color: #ccc; /* Color para las estrellas sin calificar */
 }
