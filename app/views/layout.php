@@ -38,9 +38,9 @@
                         Bienvenido, <?= $_SESSION['usuario'] ?? 'Invitado' ?>
                     </span>
                     <?php if (isset($_SESSION['usuario'])): ?>
-                        <a href="?controller=Auth&action=logout" class="btn btn-outline-danger">Cerrar Sesión</a>
+                        <a href="?controller=Login&action=logout" class="btn btn-outline-danger">Cerrar Sesión</a>
                     <?php else: ?>
-                        <a href="?controller=Auth&action=login" class="btn btn-primary">Iniciar Sesión</a>
+                        <a href="?controller=Login&action=login" class="btn btn-primary">Iniciar Sesión</a>
                     <?php endif; ?>
                 </div>
             </div>

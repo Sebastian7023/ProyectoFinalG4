@@ -45,6 +45,13 @@
                         <textarea class="form-control" id="comentario" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Enviar Reseña</button>
+                    <div class="review-btn">
+                        <a href="http://localhost/ProyectoFinalG4/" class="btn btn-secondary">
+                            <i class="bi bi-x-circle me-1"></i>
+                            Cancelar
+                        </a>
+                    </div>
+                    
                 </form>
             </div>
         </div>

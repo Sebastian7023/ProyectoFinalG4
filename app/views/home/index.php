@@ -17,6 +17,11 @@
         <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
     </a>
 
+    <!-- Botón para añadir reseñas - FUERA de la sección de testimonios -->
+    <a href="/ProyectoFinalG4/app/views/review/index.php" class="review-btn" title="Añadir reseña">
+        <i class="bi bi-chat-square-text"></i>
+        <span>Dejar Reseña</span>
+    </a>
     <!-- Hero Section -->
     <section class="hero-section" id="inicio">
         <div class="container text-center down center text-white">
