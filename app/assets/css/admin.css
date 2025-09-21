@@ -1,0 +1,200 @@
+/* Variables de colores PrettyGirl - ¡Centralizadas para fácil mantenimiento! */
+:root {
+    --pretty-pink: #d85a7f;
+    --pretty-pink-light: #ff9eb7;
+    --pretty-pink-lighter: #fce7f3;
+    --pretty-success: #7EE7B6;
+    --pretty-warning: #FFD966;
+    --pretty-info: #6EE0F7;
+    --pretty-dark: #2d3748;
+    --pretty-gray: #718096;
+    --pretty-light: #f7fafc;
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* Estilos de la página principal */
+body.admin-theme {
+    background-color: var(--pretty-light);
+    font-family: var(--font-body);
+    color: var(--pretty-dark);
+}
+
+.dashboard-admin {
+    padding: 2rem;
+    min-height: 100vh;
+}
+
+/* Encabezado y títulos */
+.dashboard-header {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px; /* Bordes más suaves */
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra más sutil y profunda */
+}
+
+.dashboard-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--pretty-pink);
+    font-size: 2.5rem; /* Título más grande y legible */
+}
+
+.dashboard-subtitle {
+    font-weight: 400;
+    color: var(--pretty-gray);
+    margin-top: -0.5rem;
+}
+
+.dashboard-stats-badge .badge {
+    background-color: var(--pretty-pink-light) !important;
+    color: white;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 50px; /* Bordes redondeados para un estilo de "pastilla" */
+}
+
+/* Tarjetas de métricas */
+.metric-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px); /* Efecto "elevado" al pasar el mouse */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.metric-icon {
+    font-size: 2.5rem;
+    color: var(--pretty-pink);
+    margin-right: 1.5rem;
+}
+
+.metric-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    color: var(--pretty-dark);
+}
+
+.metric-content p {
+    color: var(--pretty-gray);
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+/* Sección de acciones rápidas */
+.quick-actions-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.quick-actions-card h5 {
+    font-family: var(--font-heading);
+    color: var(--pretty-dark);
+    margin-bottom: 1.5rem;
+}
+
+.quick-action-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.quick-action-item:hover {
+    background-color: rgba(216, 90, 127, 0.05); /* Fondo sutil al pasar el mouse */
+}
+
+.quick-action-icon {
+    color: var(--pretty-pink);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+}
+
+.quick-action-text {
+    font-weight: 600;
+    color: var(--pretty-dark);
+}
+
+/* Tarjeta de gráficos y distribución */
+.chart-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.chart-card h5 {
+    font-family: var(--font-heading);
+    color: var(--pretty-dark);
+}
+
+.distribution-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.distribution-label {
+    font-weight: 400;
+    color: var(--pretty-gray);
+}
+
+.distribution-value {
+    font-weight: 600;
+    color: var(--pretty-dark);
+}
+
+.distribution-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+}
+
+.distribution-color.admin { background-color: var(--pretty-pink); }
+.distribution-color.stylist { background-color: var(--pretty-success); }
+.distribution-color.client { background-color: var(--pretty-info); }
+
+/* Actividad reciente (si la implementas) */
+.activity-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.activity-icon {
+    font-size: 1.2rem;
+    color: var(--pretty-pink);
+    margin-right: 1rem;
+}
+
+.activity-text {
+    font-size: 0.9rem;
+    color: var(--pretty-gray);
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 992px) {
+    .metric-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    .metric-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}

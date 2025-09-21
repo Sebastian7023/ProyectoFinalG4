@@ -1,0 +1,108 @@
+/* Estructura y Contenedores */
+.user-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.user-card .card-body {
+    padding: 2rem;
+}
+
+/* Tabla de Usuarios */
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table thead tr th {
+    background-color: var(--color-principal-rosa);
+    color: white;
+    border-bottom: none;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.table tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(224, 171, 204, 0.05);
+}
+
+.table tbody tr td {
+    vertical-align: middle;
+    color: var(--color-plomo-oscuro);
+}
+
+/* Botones de acción en la tabla */
+.action-buttons .btn {
+    border-radius: 20%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.action-buttons .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* Botones específicos */
+.btn-primary {
+    background-color: var(--color-principal-rosa);
+    border-color: var(--color-principal-rosa);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-acento-morado);
+    border-color: var(--color-acento-morado);
+}
+
+.btn-outline-secondary {
+    color: var(--color-acento-morado);
+    border-color: var(--color-acento-morado);
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--color-acento-morado);
+    color: white;
+}
+
+.btn-success {
+    background-color: var(--color-exito);
+    border-color: var(--color-exito);
+}
+
+.btn-danger {
+    background-color: var(--color-principal-rosa);
+    border-color: var(--color-principal-rosa);
+}
+
+/* Formulario */
+.form-label {
+    font-weight: 600;
+    color: var(--color-plomo-oscuro);
+}
+
+.card.shadow-sm {
+    border-radius: 15px;
+}
+
+/* Alertas y SweetAlert2 */
+.alert {
+    border-radius: 12px;
+    border: none;
+}
+
+.swal2-popup {
+    border-radius: 15px !important;
+    background-color: var(--color-fondo-rosa) !important;
+}
