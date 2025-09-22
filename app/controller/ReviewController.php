@@ -50,7 +50,9 @@ class ReviewController {
             header('Location: index.php');
             exit();
         }
+        if (){
 
+        }
         $data = [
             'appointmentId' => $_POST['appointmentId'] ?? '',
             'ratingValue' => $_POST['ratingValue'] ?? '',
