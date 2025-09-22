@@ -9,6 +9,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="app/assets/css/home.css" rel="stylesheet">
+    <style>
+                /* Estilos para el botón flotante de reseña */
+.review-btn {
+    position: fixed;
+    top: 750px; /* Posiciona el botón a 20px del borde superior */
+    right: 10px; /* Posiciona el botón a 170px del borde derecho */
+    background-color: var(--rosa-oscuro);
+    color: white;
+    border-radius: 50px;
+    padding: 10px 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    z-index: 1000;
+}
+
+.review-btn:hover {
+    background-color: var(--rosa-medio);
+    transform: scale(1.05);
+}
+
+.review-btn i {
+    font-size: 1.2rem;
+    margin-right: 8px;
+}
+ 
+.review-btn:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+    </style>
 </head>
 
 <body>
@@ -19,8 +54,8 @@
 
     <!-- Botón para añadir reseñas - FUERA de la sección de testimonios -->
     <a href="/ProyectoFinalG4/app/views/review/index.php" class="review-btn" title="Añadir reseña">
-        <i class="bi bi-chat-square-text"></i>
-        <span>Dejar Reseña</span>
+        <i class="bi bi-chat-square-text" style="font-size: 1.5rem;"></i>
+        Dejar Reseña
     </a>
     <!-- Hero Section -->
     <section class="hero-section" id="inicio">

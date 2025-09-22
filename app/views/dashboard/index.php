@@ -16,7 +16,7 @@
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="card service-card">
-                        <div class="service-icon">
+                        <div class="service-icon">  
                             <i class="bi bi-scissors"></i>
                         </div>
                         <h4>Cortes de Pelo</h4>
