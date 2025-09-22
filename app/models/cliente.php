@@ -41,4 +41,12 @@ class Cliente
         $stmt = $this->db->prepare($sql);
         return $stmt->execute($data);
     }
+
+    public function loginCliente($dni)
+    {
+        $sql = "SELECT * FROM client WHERE dni = :dni ";
+        $smt = $this->db->prepare($sql);
+        $smt->execute(['dni' => $dni]);
+        return $smt->fetch(PDO::FETCH_ASSOC);
+    }
 }

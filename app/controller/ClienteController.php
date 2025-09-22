@@ -19,6 +19,23 @@ class ClienteController
         require $vista;
     }
 
+    public function dashboardCliente()
+    {
+            // Inicia sesión solo si no hay una activa
+        if(session_status() === PHP_SESSION_NONE){
+            session_start();
+        }
+
+        if(!isset($_SESSION['cliente'])) {
+            header("Location: index.php?controller=LoginCliente&action=login");
+            exit();
+        }
+
+        // Vista del dashboard
+        $vista = 'app/views/clientes/dashboardCliente.php';
+        require $vista;
+    }
+
     public function crear()
     {
         $vista = 'app/views/clientes/crearCliente.php';
@@ -26,12 +43,12 @@ class ClienteController
         require $vista;
     }
 
-    public function guardar()
+    /* public function guardar()
     {
-       /*  if(!isset($_SESSION['usuario'])){
+       if(!isset($_SESSION['usuario'])){
             header('Location: index.php');
             exit();
-        } */
+        } 
 
         $data = [
             'dni' => $_POST['dni'] ?? '',
@@ -46,6 +63,29 @@ class ClienteController
             exit();
         }else{
             echo "<script>alert('Error al guardar el cliente');windows.history.back();</script>";
+        }
+    } */
+
+    public function registrarClienteForm()
+    {
+        require 'app/views/clientes/registrarCliente.php';
+    }
+
+    public function registrar()
+    {
+        $data = [
+            'dni' => $_POST['dni'] ?? '',
+            'fullName' => $_POST['fullName'] ?? '',
+            'phone' => $_POST['phone'] ?? '',
+            'email' => $_POST['email'] ?? ''
+        ];
+
+        $cliente = new Cliente();
+        if ($cliente->guardar($data)) {
+            header("Location: /ProyectoFinalG4/index.php?controller=LoginCliente&action=login");
+            exit();
+        } else {
+            echo "<script>alert('Error al registrar el cliente'); window.history.back();</script>";
         }
     }
 
