@@ -49,14 +49,10 @@
         <h1 class="mb-4 section-title text-center">Deja tu Reseña</h1>
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <form action="index.php?controller=Home&action=guardar" method="POST">
+                <form action="index.php?controller=Review&action=guardar" method="POST">
                     <div class="mb-3">
                         <label for="appointmentId" class="form-label">Número de cita</label>
                         <input type="number" min="0" class="form-control" id="appointmentId" name="appointmentId" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Correo electrónico</label>
-                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="servicio" class="form-label">Servicio recibido</label>

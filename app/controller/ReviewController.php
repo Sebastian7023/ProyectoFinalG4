@@ -1,5 +1,6 @@
 <?php
 require_once 'app/models/review.php';
+require_once 'app/models/cita.php';
 
 class ReviewController {
 
@@ -49,9 +50,6 @@ class ReviewController {
         if (!isset($_SESSION['usuario'])) {
             header('Location: index.php');
             exit();
-        }
-        if (){
-
         }
         $data = [
             'appointmentId' => $_POST['appointmentId'] ?? '',
