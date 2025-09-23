@@ -1,11 +1,4 @@
 
-:root {
-    --color-principal-rosa: #d85a7f;
-    --color-fondo-rosa: #fce7f3;
-    --color-plomo-oscuro: #2d3748;
-    --color-plomo-claro: #e9ecef;    
-}
-
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: var(--color-fondo-rosa);

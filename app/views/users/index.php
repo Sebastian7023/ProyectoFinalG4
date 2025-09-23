@@ -35,7 +35,7 @@
                                             <?= htmlspecialchars($usuario['rol']) ?>
                                         </span>
                                     </td>
-                                    <td><?= htmlspecialchars($usuario['specialty'] ?? 'N/A') ?></td>
+                                    <td><?= htmlspecialchars($usuario['specialty'] ?? ' ') ?></td>
                                     <td>
                                         <span class="badge bg-<?= $usuario['isActive'] ? 'success' : 'danger' ?>">
                                             <?= $usuario['isActive'] ? 'Activo' : 'Inactivo' ?>
@@ -70,3 +70,22 @@
         </div>
     </div>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function confirmDelete(id, name) {
+    Swal.fire({
+        title: '¿Estás seguro?',
+        html: `Vas a eliminar al usuario: <b>${name}</b>.<br>Esta acción no se puede deshacer.`,
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#d85a7f',
+        cancelButtonColor: '#718096',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = `index.php?controller=User&action=delete&id=${id}`;
+        }
+    });
+}
+</script>

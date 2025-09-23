@@ -15,7 +15,7 @@ class LoginController
     public function autenticar()
     {   
         $usuario = new Usuario();
-        $data = $usuario->login($_POST['userName'],$_POST['userPassword']);
+        $data = $usuario->login($_POST['email'],$_POST['userPassword']);
         
         if ($data){
             $_SESSION['usuario'] = $data;
@@ -24,13 +24,8 @@ class LoginController
             // DEBUG: Verificar qué datos estamos recibiendo
             error_log("Usuario autenticado: " . print_r($data, true));
             
-            if ($data['rol'] === 'Administrador') {
-                header("Location: index.php?controller=User&action=index");
-                exit();
-            } else {
-                header("Location: index.php?controller=Estilista&action=index");
-                exit();
-            }
+            header("Location: index.php?controller=User&action=index");          
+            
         } else {
             $_SESSION['error_login'] = 'Credenciales incorrectas';
             header("Location: index.php?controller=Login&action=login");

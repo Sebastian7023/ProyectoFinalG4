@@ -23,9 +23,9 @@
 
         <form action="index.php?controller=Login&action=autenticar" method="POST">
             <div class="mb-3">
-                <label for="userName" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="userName" name="userName" required 
-                       value="<?= isset($_POST['userName']) ? htmlspecialchars($_POST['userName']) : '' ?>">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required 
+                       value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>">
             </div>
             <div class="mb-3">
                 <label for="userPassword" class="form-label">Contraseña</label>

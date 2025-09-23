@@ -56,8 +56,8 @@
                         <div class="col-md-6 mb-3">
                             <label for="rol" class="form-label">Rol *</label>
                             <select class="form-select" id="rol" name="rol" required>
-                                <option value="administrador" <?= ($_SESSION['form_data']['rol'] ?? $usuario['rol']) === 'administrador' ? 'selected' : '' ?>>Administrador</option>
-                                <option value="estilista" <?= ($_SESSION['form_data']['rol'] ?? $usuario['rol']) === 'estilista' ? 'selected' : '' ?>>Estilista</option>
+                                <option value="Administrador" <?= ($_SESSION['form_data']['rol'] ?? $usuario['rol']) === 'Administrador' ? 'selected' : '' ?>>Administrador</option>
+                                <option value="Estilista" <?= ($_SESSION['form_data']['rol'] ?? $usuario['rol']) === 'Estilista' ? 'selected' : '' ?>>Estilista</option>
                             </select>
                         </div>
                         <div class="col-md-6 mb-3">

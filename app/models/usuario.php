@@ -11,13 +11,13 @@ class Usuario
         $this->db = Database::conectar();
     }
 
-    public function login($userName, $userPassword)
+    public function login($email, $userPassword)
     {
         // Asegurémonos que la consulta SQL es correcta
-        $sql = "SELECT * FROM users WHERE userName = :userName AND userPassword = SHA2(:userPassword, 256)";
+        $sql = "SELECT * FROM users WHERE email = :email AND userPassword = SHA2(:userPassword, 256)";
         $smt = $this->db->prepare($sql);
         $smt->execute([
-            'userName' => $userName,
+            'email' => $email,
             'userPassword' => $userPassword
         ]);
 
@@ -47,11 +47,11 @@ class Usuario
         ]);
     }
 
-    public function obtenerUser($userName)
+    public function obtenerUser($email)
     {
-        $sql = "SELECT * FROM users WHERE userName = :userName";
+        $sql = "SELECT * FROM users WHERE email = :email";
         $smt = $this->db->prepare($sql);
-        $smt->execute(['userName' => $userName]);
+        $smt->execute(['email' => $email]);
         return $smt->fetch(PDO::FETCH_ASSOC);
     }
 
