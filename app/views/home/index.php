@@ -15,10 +15,10 @@
         <span>Dejar Reseña</span>
     </a>
 
-    <a href="index.php?controller=Review&action=editar" class="btn" title="Editar reseña">
+    <!-- <a href="index.php?controller=Review&action=editar" class="btn" title="Editar reseña">
         <i class="bi bi-chat-square-text"></i>
         <span>Editar Reseña</span>
-    </a>
+    </a> -->
 
     <!-- Hero Section -->
     <section class="hero-section" id="inicio">
