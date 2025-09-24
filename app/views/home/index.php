@@ -22,7 +22,7 @@
         <div class="container text-center down center text-white">
             <p class="lead mb-4">Tu belleza es nuestra prioridad. Experimenta el lujo y la excelencia en cada visita.</p>
             <a href="#servicios" class="btn btn-dark btn-lg me-2">Nuestros Servicios</a>
-            <a href="#contacto" class="btn btn-outline-light btn-lg">Reservar Ahora</a>
+            <a href="index.php?controller=LoginCliente&action=login" class="btn btn-outline-light btn-lg">Reservar Ahora</a>
         </div>
     </section>
 

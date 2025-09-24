@@ -28,11 +28,11 @@
                 </div>
                 <div class="feature d-flex align-items-center mb-3">
                     <i class="bi bi-people fs-4 me-3"></i>
-                    <span>Visualiza tus servicios</span>
+                    <span>Visualiza tus datos</span>
                 </div>
                 <div class="feature d-flex align-items-center">
                     <i class="bi bi-graph-up fs-4 me-3"></i>
-                    <span>Accede a tus reportes personales</span>
+                    <span>Deja tus reseñas</span>
                 </div>
             </div>
         </div>
