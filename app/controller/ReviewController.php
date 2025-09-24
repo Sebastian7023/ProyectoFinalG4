@@ -1,19 +1,18 @@
 <?php
 require_once 'app/models/review.php';
-require_once 'app/models/cita.php';
 
 class ReviewController {
 
     public function index() {
-        if (!isset($_SESSION['usuario'])) {
-            header('Location: index.php');
-            exit();
-        }
+        // if (!isset($_SESSION['usuario'])) {
+        //     header('Location: index.php');
+        //     exit();
+        // }
         $reviews = new Review();
         $listaReviews = $reviews->obtenerTodos();
-        $vista = 'app/views/reviews/index.php';
+        $vista = 'app/views/review/index.php';
         $titulo = 'Lista de Valoraciones';
-        require_once 'app/views/home/index.php';
+        require_once $vista;
     }
 
     public function obtenerPorId() {
@@ -37,20 +36,21 @@ class ReviewController {
     }
 
     public function crear() {
-        if (!isset($_SESSION['usuario'])) {
+        /* if (!isset($_SESSION['usuario'])) {
             header('Location: index.php');
             exit();
-        }
-        $vista = 'app/views/reviews/crear.php';
+        } */
+        $vista = 'app/views/review/index.php';
         $titulo = 'Crear Valoración';
-        require 'app/views/home/index.php';
+        require $vista;
     }
 
     public function guardar() {
-        if (!isset($_SESSION['usuario'])) {
+        /* if (!isset($_SESSION['usuario'])) {
             header('Location: index.php');
             exit();
-        }
+        } */
+
         $data = [
             'appointmentId' => $_POST['appointmentId'] ?? '',
             'ratingValue' => $_POST['ratingValue'] ?? '',
@@ -60,7 +60,7 @@ class ReviewController {
         $review = new Review();
         if ($review->guardar($data)) {
             // Se ha corregido la redirección para que se dirija al home index
-            header('Location: index.php'); 
+            header('Location: index.php?controller=Home&action=index'); 
             exit();
         } else {
             echo "<script>alert('Error al guardar la valoración');window.history.back();</script>";
