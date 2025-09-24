@@ -260,4 +260,14 @@ class UserController
         $titulo = 'Gestión de Usuarios';
         require 'app/views/users/layout.php';
     }
+
+    public function gestionarEstilistas()
+    {
+        $this->verificarRolAdmin();
+        
+        $estilistas = $this->usuario->listarEstilistas();        
+        $vista = 'app/views/users/gestionar_estilistas.php';
+        $titulo = 'Gestión de Estilistas';
+        require 'app/views/users/layout.php';
+    }
 }

@@ -12,7 +12,7 @@
                 <div class="col-md-6 text-md-end">
                     <div class="dashboard-stats-badge">
                         <span class="badge bg-stylist-green">
-                            <i class="bi bi-person-circle me-2"></i>Modo Estilista
+                            <i class="bi bi-person-circle me-2"></i>Estilista
                         </span>
                     </div>
                 </div>

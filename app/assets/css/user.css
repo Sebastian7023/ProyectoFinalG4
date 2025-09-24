@@ -23,10 +23,10 @@
     --font-family: 'Playfair Display', serif;
 }
 
-.users-container {
-    max-width: 1200px;
+.users-container {    
     margin: 0 auto;
     padding: 2rem;
+    max-width: 100%;
 }
 
 .section-title {

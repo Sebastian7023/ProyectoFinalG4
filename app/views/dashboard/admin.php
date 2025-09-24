@@ -102,7 +102,7 @@
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a>
-                    <a href="?controller=Estilista&action=listar" class="quick-action-item">
+                    <a href="?controller=User&action=gestionarEstilistas" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-scissors"></i>
                         </div>

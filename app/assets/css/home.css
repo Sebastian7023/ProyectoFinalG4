@@ -86,7 +86,7 @@ html {
     padding: 2rem;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     z-index: 2;
     position: relative;
@@ -383,7 +383,7 @@ footer {
 
     .hero-content {
         padding: 1.5rem;
-        max-width: 95%;
+        max-width: 100%;
     }
 
     .review-btn {
