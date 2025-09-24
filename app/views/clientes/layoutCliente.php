@@ -38,7 +38,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?controller=Cita&action=index">
+                            <a class="nav-link" href="index.php?controller=Cita&action=verCitas">
                                 <i class="bi bi-calendar-check-fill"></i> Citas
                             </a>
                         </li>
