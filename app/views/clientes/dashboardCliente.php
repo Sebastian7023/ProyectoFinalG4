@@ -88,7 +88,7 @@
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a>
-                    <a href="index.php?controller=User&action=gestionarUsuarios" class="quick-action-item">
+                    <a href="index.php?controller=Cita&action=verCitas" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-people"></i>
                         </div>
@@ -100,7 +100,7 @@
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a>
-                    <a href="?controller=User&action=gestionarEstilistas" class="quick-action-item">
+                    <a href="?controller=Review&action=verReseña" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-scissors"></i>
                         </div>

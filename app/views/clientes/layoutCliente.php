@@ -43,7 +43,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?controller=Review&action=index">
+                            <a class="nav-link" href="index.php?controller=Review&action=verReseña">
                                 <i class="bi bi-chat-square-text-fill"></i> Reseñas
                             </a>
                         </li>
