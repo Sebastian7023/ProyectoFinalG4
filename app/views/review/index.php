@@ -6,43 +6,7 @@
     <title>Deja tu Reseña</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="../../assets/css/home.css" rel="stylesheet">
-    <link href="../../assets/css/review.css" rel="stylesheet">
-    <style>
-                /* Estilos para el botón flotante de reseña */
-.review-btn {
-    position: fixed;
-    top: 800px; /* Posiciona el botón a 20px del borde superior */
-    right: 40px; /* Posiciona el botón a 170px del borde derecho */
-    background-color: var(--rosa-oscuro);
-    color: white;
-    border-radius: 50px;
-    padding: 10px 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    z-index: 1000;
-}
-
-.review-btn:hover {
-    background-color: var(--rosa-medio);
-    transform: scale(1.05);
-}
-
-.review-btn i {
-    font-size: 1.2rem;
-    margin-right: 8px;
-}
- 
-.review-btn:active {
-    transform: translateY(0) scale(1);
-    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
-}
-    </style>
+    <link href="/ProyectoFinalG4_USER/app/assets/css/review.css" rel="stylesheet">
 </head>
 <body>
     <div class="container py-5">
@@ -69,11 +33,11 @@
                     <div class="mb-3">
                         <label class="form-label">Calificación</label>
                         <div id="rating-stars">
-                            <i class="bi bi-star" data-value="1"></i>
-                            <i class="bi bi-star" data-value="2"></i>
-                            <i class="bi bi-star" data-value="3"></i>
-                            <i class="bi bi-star" data-value="4"></i>
-                            <i class="bi bi-star" data-value="5"></i>
+                            <i class="bi bi-star bi-star-fill text-warning" data-value="1"></i>
+                            <i class="bi bi-star bi-star-fill text-warning" data-value="2"></i>
+                            <i class="bi bi-star bi-star-fill text-warning" data-value="3"></i>
+                            <i class="bi bi-star bi-star-fill text-warning" data-value="4"></i>
+                            <i class="bi bi-star bi-star-fill text-warning" data-value="5"></i>
                         </div>
                         <input type="hidden" id="rating-value" name="ratingValue" value="0">
                     </div>
@@ -82,7 +46,7 @@
                         <textarea class="form-control" id="comentario" name="reviewComment" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Enviar Reseña</button>
-                    <a href="http://localhost/ProyectoFinalG4/" class="review-btn bi bi-door-closed-fill "> 
+                    <a href="index.php?controler=Home&action=index" id="review-btn" class="bi bi-door-closed-fill"> 
                         Cancelar Reseña
                     </a>
                 </form>
@@ -90,8 +54,8 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script>
+</body>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             const starContainer = document.getElementById('rating-stars');
             const stars = starContainer.querySelectorAll('.bi-star, .bi-star-fill');
@@ -136,6 +100,4 @@
             updateStars(selectedValue);
         });
     </script>
-     
-    </body>
 </html>

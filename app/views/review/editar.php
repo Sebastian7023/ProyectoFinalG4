@@ -6,38 +6,7 @@
     <title>Editar Reseña</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="../../assets/css/home.css" rel="stylesheet">
-    <link href="../../assets/css/review.css" rel="stylesheet">
-    <style>
-                /* Estilos para el botón flotante de reseña */
-.review-btn {
-    position: fixed;
-    top: 800px; /* Posiciona el botón a 20px del borde superior */
-    right: 40px; /* Posiciona el botón a 170px del borde derecho */
-    background-color: var(--rosa-oscuro);
-    color: white;
-    border-radius: 50px;
-    padding: 10px 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    z-index: 1000;
-}
-
-.review-btn:hover {
-    background-color: var(--rosa-medio);
-    transform: scale(1.05);
-}
-
-.review-btn:active {
-    transform: translateY(0) scale(1);
-    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
-}
-    </style>
+    <link href="/ProyectoFinalG4_USER/app/assets/css/review.css" rel="stylesheet">
 </head>
 <body>
     <div class="container py-5">
