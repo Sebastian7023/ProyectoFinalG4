@@ -1,157 +1,209 @@
 :root {
-            --primary-color: #d35678;
-            --secondary-color: #f8d7da;
-            --dark-color: #5d4037;
-            --light-color: #fff9f9;
-        }
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: #5d4037;
-            background-color: var(--light-color);
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', serif;
-        }
-        
-        .navbar {
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../images/portaadaa.png');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-primary:hover {
-            background-color: #b94c61;
-            border-color: #b94c61;
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary-color);
-            border-color: var(--primary-color);
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        
-        .section-title {
-            position: relative;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        
-        .section-title:after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-color);
-            margin: 15px auto;
-        }
-        
-        .card {
-            border: none;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            transition: transform 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-card {
-            text-align: center;
-            padding: 2rem 1rem;
-        }
-        
-        .service-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .testimonial-card {
-            padding: 2rem;
-            background-color: white;
-            border-radius: 15px;
-        }
-        
-        .testimonial-img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1rem;
-        }
-        
-        .pricing-card {
-            text-align: center;
-        }
-        
-        .pricing-header {
-            background-color: var(--primary-color);
-            color: white;
-            padding: 2rem;
-        }
-        
-        .pricing-body {
-            padding: 2rem;
-        }
-        
-        .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-        }
-        
-        .gallery-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-        
-        .gallery-item img {
-            transition: transform 0.5s ease;
-        }
-        
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-        
-        .accordion-button:not(.collapsed) {
-            background-color: var(--secondary-color);
-            color: var(--dark-color);
-        }
-        
-        .brand-img {
-            filter: grayscale(100%);
-            opacity: 0.7;
-            transition: all 0.3s ease;
-        }
-        
-        .brand-img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
-        }
-        
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-        }
+    /* Paleta de colores principales (tonos rosados, plomo y negro) */
+    --color-principal-rosa: #d85a7f;
+    /* Rosa oscuro */
+    --color-rosa-claro: #ff9eb7;
+    /* Rosa más claro */
+    --color-fondo-rosa: #fce7f3;
+    /* Rosa muy pálido para fondos */
+    --color-acento-morado: #8a3d54;
+    /* Un tono más oscuro y acentuado */
+
+    /* Tonos neutros */
+    --color-plomo-oscuro: #2d3748;
+    /* Plomo/Negro para textos y títulos */
+    --color-plomo-medio: #718096;
+    /* Plomo para textos secundarios */
+    --color-plomo-claro: #e9ecef;
+    /* Plomo claro para bordes o fondos sutiles */
+    --color-fondo-claro: #f7fafc;
+    /* Blanco roto */
+
+    /* Colores de estado (éxito, advertencia, información) */
+    --color-exito: #7EE7B6;
+    /* Verde */
+    --color-alerta: #FFD966;
+    /* Amarillo */
+    --color-info: #6EE0F7;
+    /* Azul */
+
+    /* Tipografía */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --font-family: 'Playfair Display', serif;
+
+    /*home css */
+    --rosa-claro: #f8bbd0;
+    --rosa-pastel: #f8d7da;
+    --rosa-medio: #e9aab8;
+    --rosa-oscuro: #d87a8a;
+    --rosa-primario: #d35678;
+
+    --oscuro: #5d4037;
+    --claro: #fff9f9;
+    --gris-claro: #f8f9fa;
+    --gris-oscuro: #424242;
+    --gris-medio: #616161;
+    --negro: #212121;
+    --rosa-principal: #e91e63;
+}
+
+/* Estilos de la página principal (si aplica) */
+body.admin-theme {
+    background-color: var(--color-fondo-claro);
+    font-family: var(--font-body);
+    color: var(--color-plomo-oscuro);
+}
+
+.admin-theme h1,
+.admin-theme h2,
+.admin-theme h3,
+.admin-theme h4,
+.admin-theme h5,
+.admin-theme h6 {
+    font-family: var(--font-heading);
+}
+
+.admin-theme .btn-primary {
+    background-color: var(--color-principal-rosa);
+    border-color: var(--color-principal-rosa);
+}
+
+.admin-theme .btn-primary:hover {
+    background-color: var(--color-acento-morado);
+    border-color: var(--color-acento-morado);
+}
+
+.admin-theme .btn-outline-primary {
+    color: var(--color-principal-rosa);
+    border-color: var(--color-principal-rosa);
+}
+
+.admin-theme .btn-outline-primary:hover {
+    background-color: var(--color-principal-rosa);
+    color: white;
+}
+
+.users-container {
+    max-width: 1400px;
+    /* Incrementa el ancho máximo para pantallas más grandes */
+    min-height: calc(100vh - 200px);
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Estilos de la barra de navegación */
+.navbar-brand span {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-principal-rosa);
+    transition: color 0.3s ease;
+}
+
+.navbar-brand:hover span {
+    color: var(--color-acento-morado);
+}
+
+.role-badge {
+    background-color: var(--color-principal-rosa);
+    color: white;
+    padding: 0.25em 0.6em;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Pie de página */
+.footer-container {
+    background-color: var(--color-plomo-oscuro);
+    color: var(--color-fondo-claro);
+    padding: 3rem 0;
+}
+
+.bg-pretty-pink {
+    background-color: var(--color-principal-rosa) !important;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50rem;
+    font-weight: 600;
+}
+
+@media (max-width: 992px) {
+    .logo-img {
+        height: 45px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.3rem;
+    }
+}
+
+/* Responsividad para el panel admin */
+@media (max-width: 768px) {
+    .admin-theme .navbar-brand img {
+        height: 4rem !important;
+    }
+
+    .admin-theme .navbar-nav .nav-link {
+        padding: 0.5rem 1rem;
+    }
+
+    .users-container {
+        padding: 1rem;
+    }
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive para tablets */
+@media (max-width: 992px) {
+    .logo-img {
+        height: 45px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.3rem;
+    }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 40px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.2rem;
+    }
+
+    .logo-container {
+        gap: 8px;
+    }
+}
+
+/* Responsive para móviles muy pequeños */
+@media (max-width: 576px) {
+    .logo-img {
+        height: 35px;
+    }
+
+    .navbar-brand span {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,79 @@
+:root {
+    --primary-color: #d35678;
+    --secondary-color: #f8d7da;
+    --dark-color: #5d4037;
+    --light-color: #fff9f9;
+
+    --rosa-pastel: #f8d7da;
+    --rosa-medio: #e9aab8;
+    --rosa-oscuro: #d87a8a;
+    --gris-claro: #f8f9fa;
+    --gris-oscuro: #343a40;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--rosa-oscuro);
+}
+
+/* Estilos específicos para la página de reseña */
+.container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.form-control,
+.form-select {
+    border-radius: 0.5rem;
+    border-color: var(--secondary-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(211, 86, 120, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #b94c61;
+    border-color: #b94c61;
+    transform: translateY(-2px);
+}
+
+/* Estilos para las estrellas de calificación */
+.bi-star, .bi-star-fill {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.bi-star-fill.text-warning {
+    color: #ffc107 !important;
+}
+
+.bi-star {
+    color: #ccc; /* Color para las estrellas sin calificar */
+}
