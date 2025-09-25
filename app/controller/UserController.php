@@ -43,13 +43,7 @@ class UserController
                 header('Location: index.php');
                 exit();
         }
-        if (file_exists($vista)) {
-            require_once $vista;
-        } else {
-            // Manejar el caso de que el archivo de vista no exista
-            header('Location: index.php'); // Redirigir a una página de error o al inicio
-            exit();
-        }
+        require_once $vista;
     }
 
     public function crear()

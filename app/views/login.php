@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -100,12 +101,8 @@
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
                 const userType = adminBtn.classList.contains('active') ? 'Administrador' : 'Estilista';
-
-                if (userType === 'Administrador') {
-                    loginForm.action = "login.php?controller=User&action=index";
-                } else {
-                    loginForm.action = "login.php?controller=User&action=index";
-                }
+                loginForm.action = "login.php?controller=User&action=index";
+                window.location.href = loginForm.action;
                 /*                 Aquí iría la lógica de autenticación
                                 console.log('Tipo de usuario:', userType);
                                 console.log('Email:', email);
