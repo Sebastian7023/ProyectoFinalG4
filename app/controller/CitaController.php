@@ -3,14 +3,7 @@ require_once 'app/models/cita.php';
 
 class CitaController
 {
-    public function __construct()
-    {
-        if (!isset($_SESSION['usuario'])) {
-            header('Location: index.php');
-            exit();
-        }
-    }
-
+    
     public function verCitas()
     {
         if (!isset($_SESSION['cliente'])) {
@@ -91,6 +84,12 @@ class CitaController
 
     public function index()
     {
+
+        if (!isset($_SESSION['usuario'])) {
+            header('Location: index.php');
+            exit();
+        }
+
         $cita = new Cita();
         $rol = $_SESSION['usuario']['rol'] ?? 'cliente'; // por defecto cliente
 
