@@ -101,7 +101,7 @@
                 const email = document.getElementById('email').value;
                 const password = document.getElementById('password').value;
                 const userType = adminBtn.classList.contains('active') ? 'Administrador' : 'Estilista';
-                loginForm.action = "login.php?controller=User&action=index";
+                loginForm.action = "index.php?controller=User&action=index";
                 window.location.href = loginForm.action;
                 /*                 Aquí iría la lógica de autenticación
                                 console.log('Tipo de usuario:', userType);
