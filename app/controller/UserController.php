@@ -22,28 +22,35 @@ class UserController
 
     public function index()
     {
-        /* if (!isset($_SESSION['usuario'])) {
+        if (!isset($_SESSION['usuario'])) {
+
             header('Location: index.php');
+
             exit();
-        } */
+        }
 
         $rol = $_SESSION['usuario']['rol'];
-        $titulo = 'Panel de ' . ucfirst(strtolower($rol));
+
+        $titulo = 'Panel de ' . ucfirst($rol);
 
         // Lógica de redirección basada en el rol
-        switch ($rol) {
-            case 'Administrador':
-                $vista = 'app/views/dashboard/admin.php';
-                break;
-            case 'Estilista':
-                $vista = 'app/views/dashboard/estilista.php';
-                break;
-            default:
-                // 3. Manejar roles no válidos o inesperados
-                header('Location: index.php');
-                exit();
+
+        if ($rol === 'Administrador') {
+
+            $vista = 'app/views/dashboard/admin.php';
+        } else if ($rol === 'Estilista') {
+
+            $vista = 'app/views/dashboard/estilista.php';
+        } else {
+
+            // Manejar un rol no reconocido
+
+            header('Location: index.php');
+
+            exit();
         }
-        require_once $vista;
+
+        require 'app/views/users/layout.php';
     }
 
     public function crear()
