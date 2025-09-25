@@ -4,7 +4,7 @@ class Database
     public static function conectar()
     {
         try {
-            $pdo = new PDO("mysql:host=localhost;dbname=prettygirl_salon", "root", "");
+            $pdo = new PDO("mysql:host=localhost;dbname=prettygirl_salon", "root", "sqladmin");
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $pdo;
         } catch (PDOException $e) {
