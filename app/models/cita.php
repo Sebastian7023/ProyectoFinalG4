@@ -63,14 +63,6 @@ class Cita
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function guardar($data)
-    {
-        $sql = "INSERT INTO appointment (clientId, serviceId, userId, appointmentDateTime, appointmentStatus, notes) 
-                VALUES (:clientId, :serviceId, :userId, :appointmentDateTime, :appointmentStatus, :notes)";
-        $stmt = $this->db->prepare($sql);
-        return $stmt->execute($data);
-    }
-
     public function cancelar($id)
     {
         $sql = "UPDATE appointment SET appointmentStatus = 'cancelled' WHERE id = :id";
@@ -78,3 +70,4 @@ class Cita
         return $stmt->execute(['id' => $id]);
     }
 }
+

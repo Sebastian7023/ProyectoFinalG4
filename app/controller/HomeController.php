@@ -1,7 +1,10 @@
 <?php
+//app/controller/HomeController.php
+
 class HomeController {
-    public function index() {
-        // Esta es la página principal para clientes
-        require 'app/views/home/index.php';
+    public function index() { 
+        $vista = 'app/views/home/index.php';       
+        $titulo = 'Pretty Girl Beauty Salón - Inicio';        
+        require 'app/views/layout.php';        
     }
 }

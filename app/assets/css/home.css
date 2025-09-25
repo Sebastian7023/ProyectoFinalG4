@@ -161,6 +161,27 @@ html {
     border: none !important;
     outline: none !important;
     cursor: pointer;
+
+}
+
+.review-btn i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.review-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.5);
+    background: linear-gradient(135deg, var(--rosa-oscuro), var(--rosa-principal)) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.review-btn:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
 }
 
 .review-btn i {
@@ -366,6 +387,132 @@ footer {
     }
 }
 
+
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* TESTIMONIOS - ESTILOS FALTANTES AÑADIDOS */
+.testimonial-card {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    text-align: center;
+    height: 100%;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Botones de reserva */
+.pricing-body .btn {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+}
+
+/* Asegurar que el fondo de la sección sea claro */
+.bg-light {
+    background-color: #f8f9fa !important; /* Gris claro estándar de Bootstrap */
+}
+
+/* PRECIOS */
+.pricing-card {
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Contenedor de precios */
+#precios .container-fluid {
+    background: transparent !important;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-header {
+    background: linear-gradient(135deg, var(--rosa-primario), #b94c61) !important;
+    color: white !important;
+    padding: 2rem 1.5rem !important;
+}
+
+.pricing-body {
+    background: white !important;
+    padding: 2rem 1.5rem !important;
+}
+
+.price {
+    color: white !important; /* Para que se vea sobre el fondo rosado */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.pricing-body .list-unstyled li {
+    color: var(--oscuro) !important;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.pricing-body .list-unstyled li:last-child {
+    border-bottom: none;
+}
+
+/* Secciones con fondos específicos */
+#precios.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* FORMULARIO CONTACTO */
+#contacto .container-fluid {
+    max-width: 100%;
+    padding: 0 15px;
+    margin: auto;
+    background: transparent !important;
+}
+
+#contacto .row {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#contacto .col-md-6 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--gris-oscuro) !important;
+    color: white !important;
+    padding: 2rem 0 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .hero-section {
+        background-size: 120% auto !important;
+    }
+}
+
 @media (max-width: 992px) {
     .hero-section {
         background-size: 140% auto !important;
@@ -428,14 +575,6 @@ footer {
     }
 }
 
-/* PALETA DE COLORES (opcional) - NO UTILIZADA
-.palette {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    margin-top: 3rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
 
 .palette h2 {
     text-align: center;
@@ -462,6 +601,7 @@ footer {
     font-weight: 500;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+
 }
 
 .color-item:hover {
@@ -505,4 +645,48 @@ footer {
         font-size: 0.9rem;
     }
 }
-*/
+
+}
+
+.color-item:hover {
+    transform: scale(1.05);
+}
+
+.color-rosa-principal {
+    background-color: var(--rosa-principal);
+}
+
+.color-rosa-claro {
+    background-color: var(--rosa-claro);
+    color: var(--gris-oscuro);
+}
+
+.color-rosa-oscuro {
+    background-color: var(--rosa-oscuro);
+}
+
+.color-gris-oscuro {
+    background-color: var(--gris-oscuro);
+}
+
+.color-gris-medio {
+    background-color: var(--gris-medio);
+}
+
+.color-gris-claro {
+    background-color: var(--gris-claro);
+    color: var(--gris-oscuro);
+}
+
+.color-negro {
+    background-color: var(--negro);
+}
+
+@media (max-width: 768px) {
+    .color-item {
+        width: 100px;
+        height: 100px;
+        font-size: 0.9rem;
+    }
+}
+

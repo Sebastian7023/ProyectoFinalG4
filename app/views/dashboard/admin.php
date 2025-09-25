@@ -1,12 +1,14 @@
+<!-- app/views/dashboard/admin.php -->
+
 <body class="admin-theme">
     <div class="dashboard-admin">
         <div class="dashboard-header">
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <h1 class="dashboard-title">
-                        <i class="bi bi-gem me-3"></i>Panel de Control de Clientes
+                        <i class="bi bi-gem me-3"></i>Panel de Control
                     </h1>
-                    <p class="dashboard-subtitle">Bienvenido al dashboard para clientes de PrettyGirl Salon</p>
+                    <p class="dashboard-subtitle">Bienvenido al centro de administración de PrettyGirl Salon</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="dashboard-stats-badge">
@@ -19,7 +21,19 @@
         </div>
     
         <!-- Sección de métricas -->
-        <div class="row metrics-row">            
+        <div class="row metrics-row">
+            <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
+                <div class="metric-card metric-card-primary">
+                    <div class="metric-icon">
+                        <i class="bi bi-people"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>25</h3>
+                        <p>Usuarios Totales</p>
+                        <span class="metric-trend positive">+12%</span>
+                    </div>
+                </div>
+            </div>
             <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
                 <div class="metric-card metric-card-success">
                     <div class="metric-icon">
@@ -27,7 +41,7 @@
                     </div>
                     <div class="metric-content">
                         <h3>15</h3>
-                        <p>Estilistas Disponibles</p>
+                        <p>Estilistas Activos</p>
                         <span class="metric-trend positive">+8%</span>
                     </div>
                 </div>
@@ -39,7 +53,7 @@
                     </div>
                     <div class="metric-content">
                         <h3>48</h3>
-                        <p>Citas Realizadas</p>
+                        <p>Citas Hoy</p>
                         <span class="metric-trend positive">+5%</span>
                     </div>
                 </div>
@@ -50,21 +64,9 @@
                         <i class="bi bi-star"></i>
                     </div>
                     <div class="metric-content">
-                        <h3>5</h3>
-                        <p>Reseñas realizadas</p>
-                        <span class="metric-trend positive">+2%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
-                <div class="metric-card metric-card-info">
-                    <div class="metric-icon">
-                        <i class="bi bi-envelope-exclamation"></i>
-                    </div>
-                    <div class="metric-content">
-                        <h3>10</h3>
-                        <p>Mensajes</p>
-                        <span class="metric-trend positive">3%</span>
+                        <h3>4.8</h3>
+                        <p>Rating Promedio</p>
+                        <span class="metric-trend positive">+0.2</span>
                     </div>
                 </div>
             </div>
@@ -76,42 +78,54 @@
                     <h4><i class="bi bi-lightning me-2"></i>Acciones Rápidas</h4>
                 </div>
                 <div class="quick-actions-grid">
-                    <a href="index.php?controller=Cliente&action=verDatos" class="quick-action-item">
+                    <a href="index.php?controller=User&action=crear" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-person-plus"></i>
                         </div>
                         <div class="action-content">
-                            <h5>Ver datos del cliente</h5>
-                            <p>Podras ver y actualizar tus datos</p>
+                            <h5>Nuevo Usuario</h5>
+                            <p>Agregar usuario al sistema</p>
                         </div>
                         <div class="action-arrow">
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a>
-                    <a href="index.php?controller=Cita&action=verCitas" class="quick-action-item">
+                    <a href="index.php?controller=User&action=gestionarUsuarios" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-people"></i>
                         </div>
                         <div class="action-content">
-                            <h5>Gestión de citas</h5>
-                            <p>Administrar las citas del cliente</p>
+                            <h5>Gestión de Usuarios</h5>
+                            <p>Administrar todos los usuarios</p>
                         </div>
                         <div class="action-arrow">
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a>
-                    <a href="?controller=Review&action=verReseña" class="quick-action-item">
+                    <a href="?controller=User&action=gestionarEstilistas" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-scissors"></i>
                         </div>
                         <div class="action-content">
-                            <h5>Reseñas</h5>
-                            <p>Reseña como te fue en tu cita</p>
+                            <h5>Estilistas</h5>
+                            <p>Gestionar profesionales</p>
                         </div>
                         <div class="action-arrow">
                             <i class="bi bi-arrow-right"></i>
                         </div>
-                    </a>                   
+                    </a>
+                    <a href="#" class="quick-action-item">
+                        <div class="action-icon">
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <div class="action-content">
+                            <h5>Reportes</h5>
+                            <p>Ver estadísticas del sistema</p>
+                        </div>
+                        <div class="action-arrow">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -126,7 +140,17 @@
                         </div>
                     </div>
                     <div class="chart-content">
-                        <div class="activity-timeline">                          
+                        <div class="activity-timeline">
+                            <div class="activity-item">
+                                <div class="activity-icon success">
+                                    <i class="bi bi-person-plus"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h6>Nuevo usuario registrado</h6>
+                                    <p>Ana García se unió al sistema</p>
+                                    <span class="activity-time">Hace 2 minutos</span>
+                                </div>
+                            </div>
                             <div class="activity-item">
                                 <div class="activity-icon primary">
                                     <i class="bi bi-calendar-plus"></i>

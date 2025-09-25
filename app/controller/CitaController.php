@@ -56,8 +56,6 @@ class CitaController
             'appointmentDateTime' => $_POST['appointmentDateTime'] ?? '',
             'appointmentStatus' => "pending",
             'notes' => $_POST['notes'] ?? ''
-        ];
-
         $cita = new Cita();
         if ($cita->guardar($data)) {
             header("Location: index.php?controller=Cita&action=verCitas");
@@ -74,13 +72,6 @@ class CitaController
             exit();
         }
 
-        $id = $_GET['id'] ?? null;
-        if (!$id) {
-            echo "ID no identificado";
-            return;
-        }
-
-        $cita = new Cita();
         if ($cita->cancelar($id)) {
             header("Location: index.php?controller=Cita&action=verCitas");
             exit();

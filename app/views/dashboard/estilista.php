@@ -1,70 +1,70 @@
-<body class="admin-theme">
-    <div class="dashboard-admin">
+<!--Panel del Estilista-->
+<body class="stylist-theme">
+    <div class="dashboard-stylist">
         <div class="dashboard-header">
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <h1 class="dashboard-title">
-                        <i class="bi bi-gem me-3"></i>Panel de Control de Clientes
+                        <i class="bi bi-scissors me-3"></i>Panel de Estilista
                     </h1>
-                    <p class="dashboard-subtitle">Bienvenido al dashboard para clientes de PrettyGirl Salon</p>
+                    <p class="dashboard-subtitle">Bienvenido, aquí puedes gestionar tus citas y clientes.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
                     <div class="dashboard-stats-badge">
-                        <span class="badge bg-pretty-pink">
-                            <i class="bi bi-activity me-2"></i>Sistema Activo
+                        <span class="badge bg-stylist-green">
+                            <i class="bi bi-person-circle me-2"></i>Estilista
                         </span>
                     </div>
                 </div>
             </div>
         </div>
     
-        <!-- Sección de métricas -->
-        <div class="row metrics-row">            
+        <div class="row metrics-row">
+            <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
+                <div class="metric-card metric-card-primary">
+                    <div class="metric-icon">
+                        <i class="bi bi-calendar-check"></i>
+                    </div>
+                    <div class="metric-content">
+                        <h3>8</h3>
+                        <p>Citas para Hoy</p>
+                        <span class="metric-trend positive">+2</span>
+                    </div>
+                </div>
+            </div>
             <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
                 <div class="metric-card metric-card-success">
                     <div class="metric-icon">
-                        <i class="bi bi-scissors"></i>
+                        <i class="bi bi-person-fill"></i>
                     </div>
                     <div class="metric-content">
-                        <h3>15</h3>
-                        <p>Estilistas Disponibles</p>
-                        <span class="metric-trend positive">+8%</span>
+                        <h3>5</h3>
+                        <p>Clientes Atendidos</p>
+                        <span class="metric-trend positive">Hoy</span>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
                 <div class="metric-card metric-card-warning">
                     <div class="metric-icon">
-                        <i class="bi bi-calendar-check"></i>
+                        <i class="bi bi-star-fill"></i>
                     </div>
                     <div class="metric-content">
-                        <h3>48</h3>
-                        <p>Citas Realizadas</p>
-                        <span class="metric-trend positive">+5%</span>
+                        <h3>4.9</h3>
+                        <p>Mi Calificación</p>
+                        <span class="metric-trend positive">+0.1</span>
                     </div>
                 </div>
             </div>
             <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
                 <div class="metric-card metric-card-info">
                     <div class="metric-icon">
-                        <i class="bi bi-star"></i>
+                        <i class="bi bi-cash-stack"></i>
                     </div>
                     <div class="metric-content">
-                        <h3>5</h3>
-                        <p>Reseñas realizadas</p>
-                        <span class="metric-trend positive">+2%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-md-6 col-sm-12 mb-4">
-                <div class="metric-card metric-card-info">
-                    <div class="metric-icon">
-                        <i class="bi bi-envelope-exclamation"></i>
-                    </div>
-                    <div class="metric-content">
-                        <h3>10</h3>
-                        <p>Mensajes</p>
-                        <span class="metric-trend positive">3%</span>
+                        <h3>$320</h3>
+                        <p>Ingresos del Día</p>
+                        <span class="metric-trend positive">Estimado</span>
                     </div>
                 </div>
             </div>
@@ -76,42 +76,54 @@
                     <h4><i class="bi bi-lightning me-2"></i>Acciones Rápidas</h4>
                 </div>
                 <div class="quick-actions-grid">
-                    <a href="index.php?controller=Cliente&action=verDatos" class="quick-action-item">
+                    <a href="index.php?controller=Cita&action=agendar" class="quick-action-item">
                         <div class="action-icon">
-                            <i class="bi bi-person-plus"></i>
+                            <i class="bi bi-calendar-plus"></i>
                         </div>
                         <div class="action-content">
-                            <h5>Ver datos del cliente</h5>
-                            <p>Podras ver y actualizar tus datos</p>
+                            <h5>Agendar Cita</h5>
+                            <p>Crear nueva cita para un cliente</p>
                         </div>
                         <div class="action-arrow">
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a>
-                    <a href="index.php?controller=Cita&action=verCitas" class="quick-action-item">
+                    <a href="index.php?controller=Cita&action=misCitas" class="quick-action-item">
+                        <div class="action-icon">
+                            <i class="bi bi-calendar-week"></i>
+                        </div>
+                        <div class="action-content">
+                            <h5>Mis Citas</h5>
+                            <p>Ver y gestionar mis próximas citas</p>
+                        </div>
+                        <div class="action-arrow">
+                            <i class="bi bi-arrow-right"></i>
+                        </div>
+                    </a>
+                    <a href="index.php?controller=Cliente&action=gestionar" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-people"></i>
                         </div>
                         <div class="action-content">
-                            <h5>Gestión de citas</h5>
-                            <p>Administrar las citas del cliente</p>
+                            <h5>Gestión de Clientes</h5>
+                            <p>Ver mis clientes y su historial</p>
                         </div>
                         <div class="action-arrow">
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a>
-                    <a href="?controller=Review&action=verReseña" class="quick-action-item">
+                    <a href="#" class="quick-action-item">
                         <div class="action-icon">
-                            <i class="bi bi-scissors"></i>
+                            <i class="bi bi-chat-dots"></i>
                         </div>
                         <div class="action-content">
-                            <h5>Reseñas</h5>
-                            <p>Reseña como te fue en tu cita</p>
+                            <h5>Mensajes</h5>
+                            <p>Revisar mensajes y notificaciones</p>
                         </div>
                         <div class="action-arrow">
                             <i class="bi bi-arrow-right"></i>
                         </div>
-                    </a>                   
+                    </a>
                 </div>
             </div>
         </div>
@@ -120,31 +132,41 @@
             <div class="col-lg-8 mb-4">
                 <div class="chart-card">
                     <div class="chart-header">
-                        <h5>Actividad Reciente</h5>
+                        <h5>Mi Actividad Reciente</h5>
                         <div class="chart-actions">
-                            <button class="btn btn-sm btn-outline-pretty">Ver Todo</button>
+                            <button class="btn btn-sm btn-outline-pretty">Ver Todas</button>
                         </div>
                     </div>
                     <div class="chart-content">
-                        <div class="activity-timeline">                          
+                        <div class="activity-timeline">
                             <div class="activity-item">
-                                <div class="activity-icon primary">
-                                    <i class="bi bi-calendar-plus"></i>
+                                <div class="activity-icon success">
+                                    <i class="bi bi-calendar-check"></i>
                                 </div>
                                 <div class="activity-content">
-                                    <h6>Nueva cita agendada</h6>
-                                    <p>Corte y color para María López</p>
-                                    <span class="activity-time">Hace 15 minutos</span>
+                                    <h6>Cita completada</h6>
+                                    <p>Corte para Camila González</p>
+                                    <span class="activity-time">Hace 5 minutos</span>
                                 </div>
                             </div>
                             <div class="activity-item">
                                 <div class="activity-icon warning">
+                                    <i class="bi bi-calendar-x"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <h6>Cita cancelada</h6>
+                                    <p>Color para Luis Pérez</p>
+                                    <span class="activity-time">Hace 30 minutos</span>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon info">
                                     <i class="bi bi-star"></i>
                                 </div>
                                 <div class="activity-content">
                                     <h6>Nueva reseña</h6>
-                                    <p>5 estrellas para el servicio de Juan</p>
-                                    <span class="activity-time">Hace 1 hora</span>
+                                    <p>4 estrellas por el servicio de corte</p>
+                                    <span class="activity-time">Hace 2 horas</span>
                                 </div>
                             </div>
                         </div>
@@ -154,30 +176,30 @@
             <div class="col-lg-4 mb-4">
                 <div class="chart-card">
                     <div class="chart-header">
-                        <h5>Distribución de Usuarios</h5>
+                        <h5>Mis Servicios Más Populares</h5>
                     </div>
                     <div class="chart-content">
                         <div class="distribution-chart">
                             <div class="distribution-item">
                                 <div class="distribution-label">
-                                    <span class="distribution-color admin"></span>
-                                    Administradores
+                                    <span class="distribution-color cut"></span>
+                                    Corte
                                 </div>
-                                <div class="distribution-value">3</div>
+                                <div class="distribution-value">45%</div>
                             </div>
                             <div class="distribution-item">
                                 <div class="distribution-label">
-                                    <span class="distribution-color stylist"></span>
-                                    Estilistas
+                                    <span class="distribution-color color"></span>
+                                    Color
                                 </div>
-                                <div class="distribution-value">12</div>
+                                <div class="distribution-value">30%</div>
                             </div>
                             <div class="distribution-item">
                                 <div class="distribution-label">
-                                    <span class="distribution-color client"></span>
-                                    Clientes
+                                    <span class="distribution-color styling"></span>
+                                    Peinado
                                 </div>
-                                <div class="distribution-value">150+</div>
+                                <div class="distribution-value">25%</div>
                             </div>
                         </div>
                     </div>
@@ -185,3 +207,4 @@
             </div>
         </div>
     </div>
+</body>

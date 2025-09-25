@@ -1,164 +1,60 @@
-:root {
-    --rosa-pastel: #f8d7da;
-    --rosa-medio: #e9aab8;
-    --rosa-oscuro: #d87a8a;
-    --gris-claro: #f8f9fa;
-    --gris-medio: #e9ecef;
-    --gris-oscuro: #343a40;
-    --negro: #212529;
-}
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: linear-gradient(135deg, var(--rosa-pastel) 0%, var(--gris-claro) 100%);
+    background-color: var(--color-fondo-rosa);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 2rem;
 }
 
-.login-container {
+.login-card {
     background-color: white;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
     width: 100%;
-    max-width: 900px;
+    padding: 2.5rem;
 }
 
-.login-left {
-    background: linear-gradient(135deg, var(--rosa-oscuro) 0%, var(--rosa-medio) 100%);
-    color: white;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.login-logo {
+    display: block;
+    margin: 0 auto 1.5rem;
+    width: 100px;
 }
 
-.logo {
-    width: 120px;
-    margin-bottom: 20px;
-}
-
-.welcome-text {
+.login-card h2 {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
-    margin-bottom: 20px;
+    color: var(--color-plomo-oscuro);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
-.login-right {
-    padding: 40px;
-}
-
-.login-form .form-control {
-    border-radius: 8px;
+.form-control {
+    border-radius: 10px;
+    border-color: var(--color-plomo-claro);
     padding: 12px 15px;
-    border: 1px solid var(--gris-medio);
-    margin-bottom: 20px;
 }
 
-.login-form .form-control:focus {
-    border-color: var(--rosa-medio);
-    box-shadow: 0 0 0 0.25rem rgba(233, 170, 184, 0.25);
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(216, 90, 127, 0.25);
+    border-color: var(--color-principal-rosa);
 }
 
 .btn-login {
-    background: linear-gradient(to right, var(--rosa-oscuro), var(--rosa-medio));
+    background-color: var(--color-principal-rosa);
     border: none;
-    color: white;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: 600;
-    width: 100%;
-    margin-top: 10px;
-    transition: all 0.3s;
 }
 
 .btn-login:hover {
-    background: linear-gradient(to right, var(--rosa-medio), var(--rosa-oscuro));
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(216, 122, 138, 0.3);
+    background-color: var(--color-acento-morado);
 }
 
-.user-type-selector {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 25px;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid var(--gris-medio);
-}
-
-.user-type-btn {
-    flex: 1;
-    padding: 10px;
-    text-align: center;
-    background-color: white;
-    border: none;
-    cursor: pointer;
-    transition: all 0.3s;
-    font-weight: 500;
-}
-
-.user-type-btn.active {
-    background: linear-gradient(to right, var(--rosa-oscuro), var(--rosa-medio));
-    color: white;
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    margin: 25px 0;
-    color: var(--gris-oscuro);
-}
-
-.divider::before,
-.divider::after {
-    content: "";
-    flex: 1;
-    height: 1px;
-    background-color: var(--gris-medio);
-}
-
-.divider span {
-    padding: 0 15px;
-    font-size: 14px;
-}
-
-.social-login {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 25px;
-}
-
-.social-btn {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--gris-claro);
-    color: var(--gris-oscuro);
-    transition: all 0.3s;
-}
-
-.social-btn:hover {
-    background-color: var(--rosa-pastel);
-    color: var(--rosa-oscuro);
-    transform: translateY(-3px);
-}
-
-@media (max-width: 768px) {
-    .login-container {
-        flex-direction: column;
-    }
-
-    .login-left {
-        padding: 30px 20px;
-    }
+.form-text {
+    color: var(--color-plomo-medio);
 }
