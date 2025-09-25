@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="/ProyectoFinalG4/app/assets/css/login.css" rel="stylesheet">
+    <link href="/ProyectoFinalG4_1/app/assets/css/login.css" rel="stylesheet">
 </head>
 <body>
     <div class="login-card">
