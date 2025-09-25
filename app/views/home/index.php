@@ -6,7 +6,7 @@
 <body>
     <!-- Botón flotante para login de administradores/estilistas -->
 
-    <a href="/ProyectoFinalG4/app/views/login.php" class="admin-login-btn" title="Acceso administradores y estilistas">
+    <a href="index.php?controller=Login&action=login" class="admin-login-btn" title="Acceso administradores y estilistas">
         <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
     </a>
 
