@@ -88,10 +88,10 @@ class ReviewController {
     }
 
     public function actualizar() {
-        if (!isset($_SESSION['usuario'])) {
-            header('Location: index.php');
-            exit();
-        }
+        // if (!isset($_SESSION['usuario'])) {
+        //     header('Location: index.php');
+        //     exit();
+        // }
         
         $data = [
             'id' => $_POST['id'] ?? '',
@@ -110,10 +110,10 @@ class ReviewController {
     }
 
     public function actualizarRespuesta() {
-        if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
-            header('Location: index.php');
-            exit();
-        }
+        // if (!isset($_SESSION['usuario']) || $_SESSION['usuario']['rol'] !== 'admin') {
+        //     header('Location: index.php');
+        //     exit();
+        // }
 
         $data = [
             'id' => $_POST['id'] ?? '',

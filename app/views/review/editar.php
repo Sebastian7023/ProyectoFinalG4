@@ -36,7 +36,7 @@
                         <textarea class="form-control" id="reviewComment" name="reviewComment" rows="4" required><?php echo htmlspecialchars($review['reviewComment'] ?? ''); ?></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Actualizar Reseña</button>
-                    <a href="index.php" class="review-btn bi bi-door-closed-fill"> 
+                    <a href="index.php?controller=Cliente&action=dashboardCliente" class="review-btn bi bi-door-closed-fill"> 
                         Cancelar Edición
                     </a>
                 </form>
