@@ -56,6 +56,7 @@ class CitaController
             'appointmentDateTime' => $_POST['appointmentDateTime'] ?? '',
             'appointmentStatus' => "pending",
             'notes' => $_POST['notes'] ?? ''
+        ];
         $cita = new Cita();
         if ($cita->guardar($data)) {
             header("Location: index.php?controller=Cita&action=verCitas");
