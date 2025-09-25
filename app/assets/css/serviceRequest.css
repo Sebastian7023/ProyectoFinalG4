@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;500;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@400;500;600;700&family=Great+Vibes&family=Satisfy&display=swap');
+
 .service-table {
     width: 100%;
     border-collapse: collapse;
@@ -11,26 +13,6 @@
     background: #f2f2f2;
 }
 
-/* Botones de acción
-.service-actions a {
-    display: inline-block;
-    margin-right: 8px;
-    padding: 6px 14px;
-    border-radius: 4px;
-    background: #e9ecef;
-    color: #333;
-    text-decoration: none;
-    border: 1px solid #bdbdbd;
-    transition: background 0.2s, color 0.2s;
-    font-size: 0.97rem;
-}
-.service-actions a:hover {
-    background: #007bff;
-    color: #fff;
-    border-color: #007bff;
-}
-
-/* Formularios de create/edit */
 .service-form {
     max-width: 420px;
     margin: 0 auto;
@@ -210,6 +192,271 @@
 /* index.php */
 
 
+body {
+    background: linear-gradient(135deg, #ffeef8 0%, #f8d7da 25%, #e3c5d9 50%, #d4a6cd 75%, #c589b8 100%);
+    min-height: 100vh;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+.container-fluid {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(197, 137, 184, 0.3);
+    margin: 20px;
+    padding: 30px;
+}
+
+.text-pink {
+    color: #d63384 !important;
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.btn-pink {
+    background: linear-gradient(45deg, #ff6b9d, #d63384);
+    border: none;
+    color: white;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(214, 51, 132, 0.3);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.btn-pink:hover {
+    background: linear-gradient(45deg, #d63384, #ff6b9d);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(214, 51, 132, 0.4);
+    color: white;
+}
+
+.card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(197, 137, 184, 0.2);
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(45deg, #ff6b9d, #d63384);
+    color: white;
+    border: none;
+    padding: 20px;
+    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.table-pink thead th {
+    background: linear-gradient(45deg, #ffc1cc, #ffb3d9);
+    color: #d63384;
+    border: none;
+    font-weight: 600;
+    padding: 15px;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 0.5px;
+    font-size: 1.1rem;
+}
+
+.table tbody tr {
+    transition: all 0.3s ease;
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+}
+
+.table tbody tr:hover {
+    background-color: rgba(255, 182, 193, 0.1);
+    transform: scale(1.01);
+}
+
+.table tbody td {
+    padding: 12px 15px;
+    vertical-align: middle;
+}
+
+.table tbody td.fw-bold {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+}
+
+.table tbody td.fw-semibold {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: #d63384;
+}
+
+.badge {
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-weight: 500;
+}
+
+.bg-success {
+    background: linear-gradient(45deg, #20c997, #198754) !important;
+}
+
+.bg-secondary {
+    background: linear-gradient(45deg, #e91e63, #ad1457) !important;
+}
+
+/* Botones de acción compactos */
+.btn-outline-primary {
+    border-color: #d63384;
+    color: #d63384;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    font-size: 0.875rem;
+}
+
+.btn-outline-primary:hover {
+    background-color: #d63384;
+    border-color: #d63384;
+    transform: scale(1.02);
+}
+
+.btn-outline-warning {
+    border-color: #ff9800;
+    color: #ff9800;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    font-size: 0.875rem;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ff9800;
+    border-color: #ff9800;
+    transform: scale(1.02);
+}
+
+.btn-outline-success {
+    border-color: #20c997;
+    color: #20c997;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    font-size: 0.875rem;
+}
+
+.btn-outline-success:hover {
+    background-color: #20c997;
+    border-color: #20c997;
+    transform: scale(1.02);
+}
+
+
+.btn-sm {
+    padding: 4px 8px !important;
+    font-size: 0.875rem !important;
+    border-radius: 6px !important;
+    min-width: auto !important;
+}
+
+.btn-group .btn-sm {
+    margin-right: 2px;
+}
+
+/* Columna de acciones más compacta */
+.table th:last-child,
+.table td:last-child {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 2px;
+    justify-content: center;
+}
+
+/* Iconos de botones más pequeños */
+.btn-sm i {
+    font-size: 0.8rem;
+}
+
+.btn-outline-secondary {
+    border-color: #d63384;
+    color: #d63384;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #d63384;
+    border-color: #d63384;
+    transform: translateY(-2px);
+}
+
+h1 {
+    text-shadow: 2px 2px 4px rgba(214, 51, 132, 0.3);
+    font-size: 2.8rem;
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.text-success {
+    color: #20c997 !important;
+    font-weight: 600;
+}
+
+.text-muted {
+    color: #d63384 !important;
+    opacity: 0.7;
+}
+
+.empty-state {
+    background: rgba(255, 182, 193, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+}
+
+.display-1 {
+    color: #ff6b9d;
+}
+
+/* Efectos de partículas decorativas */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(214, 51, 132, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 107, 157, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Estilos previos mantenidos para compatibilidad */
+.service-list-pink-bg {
+    background: linear-gradient(135deg, #ffe0ef 0%, #f8bbd0 100%);
+    padding: 40px 0 60px 0;
+    min-height: 100vh;
+}
+
+.service-table th, .service-table td {
+    vertical-align: middle;
+}
+
+
 .service-list-pink-bg {
     background: linear-gradient(135deg, #ffe0ef 0%, #f8bbd0 100%);
     padding: 40px 0 60px 0;
@@ -233,6 +480,7 @@
 .service-table th, .service-table td {
     vertical-align: middle;
 }
+
 .badge.bg-pink {
     background: #f8bbd0;
     color: #b30059;
@@ -241,6 +489,7 @@
     border-radius: 8px;
     padding: 6px 14px;
 }
+
 .service-actions a {
     display: inline-block;
     margin-right: 8px;
@@ -254,31 +503,115 @@
     font-size: 0.97rem;
     font-weight: 500;
 }
+
 .service-actions .btn-action-edit {
     background: #fff0f6;
     color: #d63384;
     border: 1.5px solid #d63384;
 }
+
 .service-actions .btn-action-edit:hover {
     background: #d63384;
     color: #fff;
 }
+
 .service-actions .btn-action-disable {
     background: #f8bbd0;
     color: #b30059;
     border: 1.5px solid #f8bbd0;
 }
+
 .service-actions .btn-action-disable:hover {
     background: #b30059;
     color: #fff;
 }
+
 .service-actions .btn-action-enable {
     background: #e9ecef;
     color: #b30059;
     border: 1.5px solid #b30059;
 }
+
 .service-actions .btn-action-enable:hover {
     background: #b30059;
     color: #fff;
 }
+
+
+/* Estilos para formularios de crear y editar */
+.form-label {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    color: #d63384;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+}
+
+.form-control {
+    border: 2px solid rgba(214, 51, 132, 0.2);
+    border-radius: 15px;
+    padding: 12px 18px;
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus {
+    border-color: #d63384;
+    box-shadow: 0 0 0 0.2rem rgba(214, 51, 132, 0.25);
+    background: white;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: rgba(214, 51, 132, 0.5);
+    font-style: italic;
+    font-family: 'Libre Baskerville', serif;
+}
+
+.form-check-input {
+    border: 2px solid #d63384;
+    border-radius: 8px;
+    transform: scale(1.2);
+    margin-right: 8px;
+}
+
+.form-check-input:checked {
+    background-color: #d63384;
+    border-color: #d63384;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.2rem rgba(214, 51, 132, 0.25);
+}
+
+.form-check-label {
+    font-family: 'Crimson Text', serif;
+    color: #d63384;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-left: 8px;
+}
+
+/* Espaciado adicional para formularios */
+.mb-3 {
+    margin-bottom: 1.5rem !important;
+}
+
+/* Estilos para textarea */
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+    font-family: 'Libre Baskerville', serif;
+    line-height: 1.6;
+}
+
+/* Botones centrados */
+.text-center .btn {
+    min-width: 160px;
+    font-weight: 600;
+}
+
 
