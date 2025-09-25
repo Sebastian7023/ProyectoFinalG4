@@ -1,34 +1,33 @@
-<!DOCTYPE html>
-<html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pretty Girl Beauty Salon</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="app/assets/css/home.css" rel="stylesheet">
-</head>
+<!--//app/views/home/index.php-->
+<!--Home Page-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+<link href="app/assets/css/home.css" rel="stylesheet">
 
 <body>
     <!-- Botón flotante para login de administradores/estilistas -->
-    <a href="/PrettyGirl-BeautySalon/app/views/login.php" class="admin-login-btn" title="Acceso administradores y estilistas">
+    <a href="index.php?controller=Login&action=login" class="admin-login-btn" title="Acceso administradores y estilistas">
         <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
+    </a>
+
+    <!-- Botón para añadir reseñas - FUERA de la sección de testimonios -->
+    <a href="index.php?controller=Review&action=index" class="review-btn" title="Añadir reseña">
+        <i class="bi bi-chat-square-text"></i>
+        <span>Dejar Reseña</span>
     </a>
 
     <!-- Hero Section -->
     <section class="hero-section" id="inicio">
-        <div class="container text-center down center text-white">
+        <div class="container-fluid text-center text-white">
             <p class="lead mb-4">Tu belleza es nuestra prioridad. Experimenta el lujo y la excelencia en cada visita.</p>
             <a href="#servicios" class="btn btn-dark btn-lg me-2">Nuestros Servicios</a>
-            <a href="#contacto" class="btn btn-outline-light btn-lg">Reservar Ahora</a>
+            <a href="#" class="btn btn-outline-light btn-lg">Reservar Ahora</a>
         </div>
     </section>
 
+
     <!-- Servicios -->
     <section id="servicios" class="py-5 bg-light">
-        <div class="container py-5">
+        <div class="container-fluid py-5">
             <h2 class="section-title">Nuestros Servicios</h2>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -89,9 +88,9 @@
         </div>
     </section>
 
-    <!-- Estadísticas -->
+    <!-- Estadísticas
     <section class="py-5 bg-white">
-        <div class="container py-5">
+        <div class="container-fluid py-5">
             <div class="row text-center">
                 <div class="col-md-3">
                     <h2 class="text-primary">500+</h2>
@@ -111,11 +110,11 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Galería -->
     <section id="galeria" class="py-5 bg-light">
-        <div class="container py-5">
+        <div class="container-fluid py-5">
             <h2 class="section-title">Nuestra Galería</h2>
             <div class="row g-3">
                 <div class="col-md-4">
@@ -154,7 +153,7 @@
 
     <!-- Testimonios -->
     <section id="testimonios" class="py-5 bg-white">
-        <div class="container py-5">
+        <div class="container-fluid py-5">
             <h2 class="section-title">Lo Que Dicen Nuestras Clientes</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
@@ -205,14 +204,14 @@
 
     <!-- Precios -->
     <section id="precios" class="py-5 bg-light">
-        <div class="container py-5">
+        <div class="container-fluid py-5">
             <h2 class="section-title">Nuestros Planes</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card pricing-card">
                         <div class="pricing-header">
                             <h4>Básico</h4>
-                            <h3 class="price">$50</h3>
+                            <h3 class="price">S/.50.00</h3>
                             <p>por sesión</p>
                         </div>
                         <div class="pricing-body">
@@ -222,7 +221,7 @@
                                 <li><i class="bi bi-x text-secondary me-2"></i> Tratamientos extras</li>
                                 <li><i class="bi bi-x text-secondary me-2"></i> Productos premium</li>
                             </ul>
-                            <a href="#contacto" class="btn btn-outline-primary">Reservar Ahora</a>
+                            <a href="#" class="btn btn-outline-primary">Reservar Ahora</a>
                         </div>
                     </div>
                 </div>
@@ -230,7 +229,7 @@
                     <div class="card pricing-card">
                         <div class="pricing-header">
                             <h4>Premium</h4>
-                            <h3 class="price">$100</h3>
+                            <h3 class="price">S/.100.00</h3>
                             <p>por sesión</p>
                         </div>
                         <div class="pricing-body">
@@ -240,7 +239,7 @@
                                 <li><i class="bi bi-check text-success me-2"></i> Tratamiento de keratina</li>
                                 <li><i class="bi bi-x text-secondary me-2"></i> Productos premium</li>
                             </ul>
-                            <a href="#contacto" class="btn btn-primary">Reservar Ahora</a>
+                            <a href="#" class="btn btn-primary">Reservar Ahora</a>
                         </div>
                     </div>
                 </div>
@@ -248,7 +247,7 @@
                     <div class="card pricing-card">
                         <div class="pricing-header">
                             <h4>VIP</h4>
-                            <h3 class="price">$150</h3>
+                            <h3 class="price">S/.150.00</h3>
                             <p>por sesión</p>
                         </div>
                         <div class="pricing-body">
@@ -258,7 +257,7 @@
                                 <li><i class="bi bi-check text-success me-2"></i> Tratamientos especiales</li>
                                 <li><i class="bi bi-check text-success me-2"></i> Productos premium</li>
                             </ul>
-                            <a href="#contacto" class="btn btn-outline-primary">Reservar Ahora</a>
+                            <a href="#" class="btn btn-outline-primary">Reservar Ahora</a>
                         </div>
                     </div>
                 </div>
@@ -268,14 +267,18 @@
 
     <!-- Contacto -->
     <section id="contacto" class="py-5 bg-white">
-        <div class="container py-5">
-            <h2 class="section-title">Reserva Tu Cita</h2>
-            <div class="row">
-                <div class="col-md-6">
+        <div class="container-fluid py-5">
+            <!-- <h2 class="section-title">Reserva Tu Cita</h2> -->
+            <!-- <div class="row"> -->
+            <!-- <div class="col-md-6">
                     <form>
                         <div class="mb-3">
                             <label for="nombre" class="form-label">Nombre Completo</label>
                             <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="dni" class="form-label">DNI</label>
+                            <input type="text" class="form-control" id="dni" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
@@ -289,7 +292,7 @@
                             <label for="servicio" class="form-label">Servicio</label>
                             <select class="form-select" id="servicio" required>
                                 <option value="">Selecciona un servicio</option>
-                                <option value="corte">Corte de Pelo</option>
+                                <option value="corte">Corte de Cabello</option>
                                 <option value="color">Coloración</option>
                                 <option value="maquillaje">Maquillaje</option>
                                 <option value="manicura">Manicura</option>
@@ -306,29 +309,29 @@
                         </div>
                         <button type="submit" class="btn btn-primary">Reservar Ahora</button>
                     </form>
-                </div>
-                <div class="col-md-6">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4>Información de Contacto</h4>
-                            <p><i class="bi bi-geo-alt me-2"></i> Avenida Siempreviva 742, Ciudad Rosa</p>
-                            <p><i class="bi bi-telephone me-2"></i> (123) 456-7890</p>
-                            <p><i class="bi bi-envelope me-2"></i> info@prettygirl.com</p>
-                            <hr>
-                            <h5>Horario de Atención</h5>
-                            <p>Lunes a Viernes: 9:00 AM - 7:00 PM</p>
-                            <p>Sábados: 9:00 AM - 5:00 PM</p>
-                            <p>Domingos: Cerrado</p>
-                        </div>
+                </div> -->
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4>Información de Contacto</h4>
+                        <p><i class="bi bi-geo-alt me-2"></i> Avenida Siempreviva 742, Ciudad Rosa</p>
+                        <p><i class="bi bi-telephone me-2"></i> (123) 456-7890</p>
+                        <p><i class="bi bi-envelope me-2"></i> info@prettygirl.com</p>
+                        <hr>
+                        <h5>Horario de Atención</h5>
+                        <p>Lunes a Viernes: 9:00 AM - 7:00 PM</p>
+                        <p>Sábados: 9:00 AM - 5:00 PM</p>
+                        <p>Domingos: Cerrado</p>
                     </div>
                 </div>
             </div>
+            <!-- </div> -->
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="py-4">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 mb-3">
                     <h5>Pretty Girl Beauty Salon</h5>
