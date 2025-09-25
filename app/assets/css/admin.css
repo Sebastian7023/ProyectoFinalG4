@@ -58,6 +58,7 @@ body.admin-theme {
 .dashboard-admin {
     padding: 2rem;
     min-height: 100vh;
+    max-width: 100%;
 }
 
 /* Estilos para el encabezado del dashboard */

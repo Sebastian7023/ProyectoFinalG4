@@ -27,6 +27,11 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
+
+.users-container {    
+    margin: 0 auto;
+    padding: 2rem;
+    max-width: 100%;
 }
 
 .section-title {

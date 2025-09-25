@@ -61,34 +61,3 @@ CREATE TABLE review (
   CHECK (ratingValue BETWEEN 1 AND 5),
   INDEX idx_review_date (reviewDate)
 );
-
--- INSERTAR OBLIGATORIAMENTE
-INSERT INTO serviceRequest (serviceName, durationMinutes, servicePrice, serviceDescription, isAvailable) VALUES
-('Corte de Pelo', 45, 25.00, 'Incluye lavado y peinado.', 1),
-('Coloración', 90, 60.00, 'Tinte de cabello completo, incluye retoques.', 1),
-('Maquillaje', 60, 40.00, 'Maquillaje profesional para eventos especiales.', 1),
-('Manicura', 30, 15.00, 'Manicura completa con esmalte regular.', 1),
-('Tratamiento Facial', 75, 55.00, 'Limpieza profunda y mascarilla hidratante.', 1);
-
--- Clientes
-INSERT INTO client (dni, fullName, phone, email) VALUES
-('12345678', 'María López', '987654321', 'maria.lopez@example.com'),
-('87654321', 'Carlos Pérez', '912345678', 'carlos.perez@example.com'),
-('45678912', 'Ana Torres', '956123478', 'ana.torres@example.com');
-
--- Usuario
-INSERT INTO users (userName, userPassword, fullName, rol, specialty, email) VALUES
-('admin', SHA2('admin',256), 'Administrador General', 'Administrador', NULL, 'admin@prettygirl.com'),
-('stylist01', SHA2('stylist123',256), 'Laura Gómez', 'stylist', 'Corte y Coloración', 'laura.gomez@prettygirl.com'),
-('makeup01', SHA2('makeup123',256), 'Sofía Ramos', 'stylist', 'Maquillaje', 'sofia.ramos@prettygirl.com');
-
--- Cita
-INSERT INTO appointment (clientId, serviceId, userId, appointmentDateTime, appointmentStatus, notes) VALUES
-(1, 1, 2, '2025-09-25 10:00:00', 'confirmed', 'Cliente solicitó corte de puntas.'),
-(2, 2, 2, '2025-09-26 15:30:00', 'pending', 'Primera vez con coloración.'),
-(3, 3, 3, '2025-09-27 18:00:00', 'confirmed', 'Maquillaje para boda.');
-
--- Review
-INSERT INTO review (appointmentId, ratingValue, reviewComment, response) VALUES
-(1, 5, 'Excelente servicio, muy profesional.', '¡Gracias por tu confianza, María!'),
-(3, 4, 'Me encantó el maquillaje, aunque tardó un poco.', 'Tomaremos en cuenta tu comentario para mejorar.');

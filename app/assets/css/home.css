@@ -86,7 +86,7 @@ html {
     padding: 2rem;
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
     z-index: 2;
     position: relative;
@@ -241,6 +241,49 @@ section {
 
 .gallery-item img {
     transition: transform 0.5s ease;
+
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* TESTIMONIOS - ESTILOS FALTANTES AÑADIDOS */
+.testimonial-card {
+    padding: 2rem;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    text-align: center;
+    height: 100%;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+/* Botones de reserva */
+.pricing-body .btn {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+}
+
+/* Asegurar que el fondo de la sección sea claro */
+.bg-light {
+    background-color: #f8f9fa !important; /* Gris claro estándar de Bootstrap */
+}
+
+
 }
 
 .gallery-item:hover img {
@@ -383,7 +426,7 @@ footer {
 
     .hero-content {
         padding: 1.5rem;
-        max-width: 95%;
+        max-width: 100%;
     }
 
     .review-btn {
@@ -462,6 +505,7 @@ footer {
     font-weight: 500;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+
 }
 
 .color-item:hover {
@@ -505,4 +549,47 @@ footer {
         font-size: 0.9rem;
     }
 }
-*/
+
+}
+
+.color-item:hover {
+    transform: scale(1.05);
+}
+
+.color-rosa-principal {
+    background-color: var(--rosa-principal);
+}
+
+.color-rosa-claro {
+    background-color: var(--rosa-claro);
+    color: var(--gris-oscuro);
+}
+
+.color-rosa-oscuro {
+    background-color: var(--rosa-oscuro);
+}
+
+.color-gris-oscuro {
+    background-color: var(--gris-oscuro);
+}
+
+.color-gris-medio {
+    background-color: var(--gris-medio);
+}
+
+.color-gris-claro {
+    background-color: var(--gris-claro);
+    color: var(--gris-oscuro);
+}
+
+.color-negro {
+    background-color: var(--negro);
+}
+
+@media (max-width: 768px) {
+    .color-item {
+        width: 100px;
+        height: 100px;
+        font-size: 0.9rem;
+    }
+}

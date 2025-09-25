@@ -85,7 +85,7 @@ body.admin-theme {
 }
 
 .users-container {
-    max-width: 1400px;
+    max-width: 100%;
     /* Incrementa el ancho máximo para pantallas más grandes */
     min-height: calc(100vh - 200px);
     margin: 0 auto;
