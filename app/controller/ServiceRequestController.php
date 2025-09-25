@@ -30,6 +30,7 @@ class ServiceRequestController {
         require __DIR__ . '/../views/serviceRequest/create.php';
     }
 
+
     public function edit() {
         $id = $_GET['id'] ?? null;
         if (!$id) {
@@ -43,6 +44,8 @@ class ServiceRequestController {
             exit;
         }
         
+    public function edit($id) {
+        $service = $this->serviceModel->getById($id);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [
                 'serviceName' => $_POST['serviceName'],

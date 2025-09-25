@@ -1,4 +1,6 @@
+<!--routers en la riz-->
 <?php
+session_start();
 $controller = $_GET['controller'] ?? 'Home';
 $action = $_GET['action'] ?? 'index';
 
