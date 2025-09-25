@@ -161,6 +161,27 @@ html {
     border: none !important;
     outline: none !important;
     cursor: pointer;
+
+}
+
+.review-btn i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+
+.review-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.5);
+    background: linear-gradient(135deg, var(--rosa-oscuro), var(--rosa-principal)) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.review-btn:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
 }
 
 .review-btn i {
@@ -241,7 +262,6 @@ section {
 
 .gallery-item img {
     transition: transform 0.5s ease;
-
 }
 
 .gallery-item:hover img {
@@ -281,6 +301,90 @@ section {
 /* Asegurar que el fondo de la sección sea claro */
 .bg-light {
     background-color: #f8f9fa !important; /* Gris claro estándar de Bootstrap */
+}
+
+/* PRECIOS */
+.pricing-card {
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    height: 100%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Contenedor de precios */
+#precios .container-fluid {
+    background: transparent !important;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+}
+
+.pricing-header {
+    background: linear-gradient(135deg, var(--rosa-primario), #b94c61) !important;
+    color: white !important;
+    padding: 2rem 1.5rem !important;
+}
+
+.pricing-body {
+    background: white !important;
+    padding: 2rem 1.5rem !important;
+}
+
+.price {
+    color: white !important; /* Para que se vea sobre el fondo rosado */
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 10px 0;
+}
+
+.pricing-body .list-unstyled li {
+    color: var(--oscuro) !important;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.pricing-body .list-unstyled li:last-child {
+    border-bottom: none;
+}
+
+/* Secciones con fondos específicos */
+#precios.bg-light {
+    background-color: #f8f9fa !important;
+}
+
+/* FORMULARIO CONTACTO */
+#contacto .container-fluid {
+    max-width: 100%;
+    padding: 0 15px;
+    margin: auto;
+    background: transparent !important;
+}
+
+#contacto .row {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+#contacto .col-md-6 {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--gris-oscuro) !important;
+    color: white !important;
+    padding: 2rem 0 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+    .hero-section {
+        background-size: 120% auto !important;
+    }
 }
 
 
@@ -471,14 +575,6 @@ footer {
     }
 }
 
-/* PALETA DE COLORES (opcional) - NO UTILIZADA
-.palette {
-    background: white;
-    border-radius: 12px;
-    padding: 2rem;
-    margin-top: 3rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
 
 .palette h2 {
     text-align: center;
@@ -593,3 +689,4 @@ footer {
         font-size: 0.9rem;
     }
 }
+

@@ -1,3 +1,152 @@
+ :root {
+            /* Variables del layout.css */
+            --primary-color: #d35678;
+            --secondary-color: #f8d7da;
+            --dark-color: #5d4037;
+            --light-color: #fff9f9;
+
+            /* Variables del home.css (si son diferentes, se pueden usar las de layout) */
+            --rosa-pastel: #f8d7da;
+            --rosa-medio: #e9aab8;
+            --gris-claro: #f8f9fa;
+            --gris-oscuro: #343a40;
+             --rosa-claro: #f8bbd0;
+    --rosa-pastel: #f8d7da;
+    --rosa-medio: #e9aab8;
+    --rosa-oscuro: #d87a8a;
+    --rosa-primario: #d35678;
+    --rosa-secundario: #f8d7da;
+    --oscuro: #5d4037;
+    --claro: #fff9f9;
+    --gris-claro: #f8f9fa;
+    --gris-oscuro: #424242;
+    --gris-medio: #616161;
+    --negro: #212121;
+    --rosa-principal: #e91e63;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-color);
+            background-color: var(--light-color);
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--rosa-oscuro);
+        }
+
+        /* Estilos específicos para la página de reseña */
+        .container {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 0.5rem;
+            border-color: var(--secondary-color);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .form-control:focus,
+        .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(211, 86, 120, 0.25);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            background-color: #b94c61;
+            border-color: #b94c61;
+            transform: translateY(-2px);
+        }
+
+        /* Estilos para las estrellas de calificación */
+        .bi-star, .bi-star-fill {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .bi-star-fill.text-warning {
+            color: #ffc107 !important;
+        }
+
+        .bi-star {
+            color: #ccc;
+        }
+
+        /* BOTÓN DE RESEÑAS FLOTANTE - SIN BORDES NEGROS */
+#review-btn {
+    position: fixed !important;
+    bottom: 100px !important;
+    right: 30px !important;
+    background: linear-gradient(135deg, var(--rosa-principal), var(--rosa-oscuro)) !important;
+    color: white !important;
+    padding: 16px 28px;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(233, 30, 99, 0.4);
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    border: none !important;
+    outline: none !important;
+    cursor: pointer;
+}
+
+#review-btn i {
+    margin-right: 10px;
+    font-size: 1.3rem;
+}
+#review-btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(233, 30, 99, 0.5);
+    background: linear-gradient(135deg, var(--rosa-oscuro), var(--rosa-principal)) !important;
+    color: white !important;
+    text-decoration: none !important;
+}
+
+#review-btn:active {
+    transform: translateY(0) scale(1);
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+}
+
+@media (max-width: 768px) {
+    #review-btn {
+        bottom: 20px !important;
+        right: 20px !important;
+        padding: 14px 20px;
+    }
+
+    #review-btn span {
+        display: none;
+    }
+
+    #review-btn i {
+        margin-right: 0;
+        font-size: 1.4rem;
+    }
+}
+
 :root {
     --primary-color: #d35678;
     --secondary-color: #f8d7da;
@@ -78,4 +227,5 @@ body {
     color: #ccc; /* Color para las estrellas sin calificar */
 
 }
+
 

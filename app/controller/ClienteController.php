@@ -33,7 +33,7 @@ class ClienteController
 
         // Vista del dashboard
         $vista = 'app/views/clientes/dashboardCliente.php';
-        require $vista;
+        require 'app/views/clientes/layoutCliente.php';
     }
 
     public function crear()
@@ -122,5 +122,71 @@ class ClienteController
         $cliente->actualizar($data);
         header('Location: routers.php?controller=Cliente&action=index');
         exit();
+    }
+
+    public function verDatos()
+    {
+        if (!isset($_SESSION['cliente'])) {
+            header("Location: index.php?controller=LoginCliente&action=login");
+            exit();
+        }
+
+        $dni = $_SESSION['cliente']['dni']; // el dni guardado en sesión al iniciar
+        $clienteModel = new Cliente();
+        $cliente = $clienteModel->loginCliente($dni); // ya tienes este método
+
+        if (!$cliente) {
+            echo "No se encontraron datos del cliente.";
+            return;
+        }
+
+        // Reutilizas el layout y le pasas la vista interna
+        $vista = "app/views/clientes/DatosCliente.php";
+        require "app/views/clientes/layoutCliente.php";
+    }
+
+    public function editarDatos()
+    {
+        if (!isset($_SESSION['cliente'])) {
+            header('Location: index.php?controller=LoginCliente&action=login');
+            exit();
+        }
+
+        $dni = $_SESSION['cliente']['dni'];
+        $clienteModel = new Cliente();
+        $cliente = $clienteModel->loginCliente($dni);
+
+        if (!$cliente) {
+            echo "Cliente no encontrado";
+            return;
+        }
+
+        $vista = 'app/views/clientes/actualizarDatosCliente.php';
+        require 'app/views/clientes/layoutCliente.php';
+    }
+
+    public function actualizarDatos()
+    {
+        if (!isset($_SESSION['cliente'])) {
+            header('Location: index.php?controller=LoginCliente&action=login');
+            exit();
+        }
+
+        $data = [
+        'id' => $_POST['id'] ?? '',
+        'dni' => $_POST['dni'] ?? '',
+        'fullName' => $_POST['fullName'] ?? '',
+        'phone' => $_POST['phone'] ?? '',
+        'email' => $_POST['email'] ?? ''
+        ];
+
+        $cliente = new Cliente();
+        if ($cliente->actualizar($data)) {
+            // Redirige a verCliente después de guardar cambios
+            header('Location: index.php?controller=Cliente&action=verDatos');
+            exit();
+        } else {
+            echo "<script>alert('Error al actualizar datos'); window.history.back();</script>";
+        }
     }
 }

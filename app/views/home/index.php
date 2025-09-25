@@ -5,7 +5,8 @@
 
 <body>
     <!-- Botón flotante para login de administradores/estilistas -->
-    <a href="index.php?controller=Login&action=login" class="admin-login-btn" title="Acceso administradores y estilistas">
+
+    <a href="/ProyectoFinalG4/app/views/login.php" class="admin-login-btn" title="Acceso administradores y estilistas">
         <i class="bi bi-person-circle" style="font-size: 1.5rem;"></i>
     </a>
 
@@ -20,7 +21,7 @@
         <div class="container-fluid text-center text-white">
             <p class="lead mb-4">Tu belleza es nuestra prioridad. Experimenta el lujo y la excelencia en cada visita.</p>
             <a href="#servicios" class="btn btn-dark btn-lg me-2">Nuestros Servicios</a>
-            <a href="#" class="btn btn-outline-light btn-lg">Reservar Ahora</a>
+            <a href="index.php?controller=LoginCliente&action=login" class="btn btn-outline-light btn-lg">Reservar Ahora</a>
         </div>
     </section>
 
