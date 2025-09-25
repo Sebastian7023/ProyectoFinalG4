@@ -22,26 +22,34 @@ class UserController
 
     public function index()
     {
-        if (!isset($_SESSION['usuario'])) {
+        /* if (!isset($_SESSION['usuario'])) {
             header('Location: index.php');
             exit();
-        }
+        } */
 
         $rol = $_SESSION['usuario']['rol'];
-        $titulo = 'Panel de ' . ucfirst($rol);
+        $titulo = 'Panel de ' . ucfirst(strtolower($rol));
 
         // Lógica de redirección basada en el rol
-        if ($rol === 'Administrador') {
-            $vista = 'app/views/dashboard/admin.php';
-        } else if ($rol === 'Estilista') {
-            $vista = 'app/views/dashboard/estilista.php';
+        switch ($rol) {
+            case 'Administrador':
+                $vista = 'app/views/dashboard/admin.php';
+                break;
+            case 'Estilista':
+                $vista = 'app/views/dashboard/estilista.php';
+                break;
+            default:
+                // 3. Manejar roles no válidos o inesperados
+                header('Location: index.php');
+                exit();
+        }
+        if (file_exists($vista)) {
+            require_once $vista;
         } else {
-            // Manejar un rol no reconocido
-            header('Location: index.php');
+            // Manejar el caso de que el archivo de vista no exista
+            header('Location: index.php'); // Redirigir a una página de error o al inicio
             exit();
         }
-
-        require 'app/views/users/layout.php';
     }
 
     public function crear()
@@ -137,9 +145,9 @@ class UserController
         $data = [
             'id' => $_POST['id'] ?? null,
             'fullName' => trim($_POST['fullName'] ?? ''),
-            'userName' => trim($_POST['userName'] ?? ''), 
+            'userName' => trim($_POST['userName'] ?? ''),
             'email' => trim($_POST['email'] ?? ''),
-            'userPassword' => $_POST['userPassword'] ?? '', 
+            'userPassword' => $_POST['userPassword'] ?? '',
             'rol' => $_POST['rol'] ?? '',
             'specialty' => trim($_POST['specialty'] ?? ''),
             'isActive' => isset($_POST['isActive']) ? 1 : 0
@@ -264,8 +272,8 @@ class UserController
     public function gestionarEstilistas()
     {
         $this->verificarRolAdmin();
-        
-        $estilistas = $this->usuario->listarEstilistas();        
+
+        $estilistas = $this->usuario->listarEstilistas();
         $vista = 'app/views/users/gestionar_estilistas.php';
         $titulo = 'Gestión de Estilistas';
         require 'app/views/users/layout.php';
