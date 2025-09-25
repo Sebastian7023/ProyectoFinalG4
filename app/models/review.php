@@ -31,7 +31,7 @@ class Review {
                 WHERE a.clientId = :clienteId
                 ORDER BY r.reviewDate DESC";
 
-        $stmt = $this->db->prepare($sql); // ✅ corregido
+        $stmt = $this->db->prepare($sql); 
         $stmt->execute(['clienteId' => $clienteId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -43,7 +43,7 @@ class Review {
                 WHERE a.clientId = :clienteId AND a.appointmentStatus = 'completed'
                 ORDER BY a.appointmentDateTime DESC";
 
-        $stmt = $this->db->prepare($sql); // ✅ corregido
+        $stmt = $this->db->prepare($sql); 
         $stmt->execute(['clienteId' => $clienteId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
