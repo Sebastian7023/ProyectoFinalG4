@@ -43,7 +43,7 @@ class ClienteController
         require $vista;
     }
 
-    /* public function guardar()
+    public function guardar()
     {
        if(!isset($_SESSION['usuario'])){
             header('Location: index.php');
@@ -64,7 +64,7 @@ class ClienteController
         }else{
             echo "<script>alert('Error al guardar el cliente');windows.history.back();</script>";
         }
-    } */
+    } 
 
     public function registrarClienteForm()
     {
@@ -188,5 +188,20 @@ class ClienteController
         } else {
             echo "<script>alert('Error al actualizar datos'); window.history.back();</script>";
         }
+    }
+
+   public function verClientesEstilista()
+    {
+        if (!isset($_SESSION['usuario'])) {
+            header('Location: index.php?controller=Home&action=index');
+            exit();
+        }
+
+        $clienteModel = new Cliente();
+        $userId = $_SESSION['usuario']['id']; // ID del estilista logueado
+        $clientes = $clienteModel->obtenerClientesPorEstilista($userId);
+
+        $vista = 'app/views/clientes/verClientesEstilista.php';
+        require 'app/views/users/layout.php';
     }
 }

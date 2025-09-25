@@ -16,6 +16,9 @@
             <a class="navbar-brand" href="#">
                 <i class="bi bi-scissors icono"></i> Pretty Girl Salon
             </a>
+            <a href="routers.php?controller=User&action=index" class="btn btn-rosa">
+                    <i class="bi bi-arrow-left me-2"></i> Volver al dashboard
+            </a>
         </div>
     </nav>
 
@@ -61,7 +64,7 @@
                         <?php endforeach; ?>
                     <?php else : ?>
                         <tr>
-                            <td colspan="7" class="text-center text-muted">✨ No hay clientes registrados aún ✨</td>
+                            <td colspan="7" class="text-center text-muted">No hay clientes registrados aún </td>
                         </tr>
                     <?php endif; ?>
                 </tbody>

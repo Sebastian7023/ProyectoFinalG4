@@ -11,15 +11,19 @@ class Usuario
         $this->db = Database::conectar();
     }
 
-    public function login($email, $userPassword)
+    public function login($email)
     {
         // Asegurémonos que la consulta SQL es correcta
-        $sql = "SELECT * FROM users WHERE email = :email AND userPassword = SHA2(:userPassword, 256)";
+        /* $sql = "SELECT * FROM users WHERE email = :email AND userPassword = SHA2(:userPassword, 256)";
         $smt = $this->db->prepare($sql);
         $smt->execute([
             'email' => $email,
             'userPassword' => $userPassword
-        ]);
+        ]);  */
+
+        $sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
+        $smt = $this->db->prepare($sql);
+        $smt->execute(['email' => $email]); 
 
         $resultado = $smt->fetch(PDO::FETCH_ASSOC);
 
@@ -31,7 +35,7 @@ class Usuario
 
     public function crear($data)
     {
-        $data['userPassword'] = hash('256', $data['userPassword']);
+        $data['userPassword'] = hash('sha256', $data['userPassword']);
         $sql = "INSERT INTO users (userName, userPassword, fullName, email, rol, specialty, isActive) 
             VALUES (:userName, :userPassword, :fullName, :email, :rol, :specialty, :isActive)";
 

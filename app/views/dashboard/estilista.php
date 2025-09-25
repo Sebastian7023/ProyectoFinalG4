@@ -76,7 +76,7 @@
                     <h4><i class="bi bi-lightning me-2"></i>Acciones Rápidas</h4>
                 </div>
                 <div class="quick-actions-grid">
-                    <a href="index.php?controller=Cita&action=agendar" class="quick-action-item">
+                    <a href="index.php?controller=Cita&action=agendarCitaEstilista" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-calendar-plus"></i>
                         </div>
@@ -88,7 +88,7 @@
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a>
-                    <a href="index.php?controller=Cita&action=misCitas" class="quick-action-item">
+                    <a href="index.php?controller=Cita&action=verCitasEstilista" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-calendar-week"></i>
                         </div>
@@ -100,7 +100,7 @@
                             <i class="bi bi-arrow-right"></i>
                         </div>
                     </a>
-                    <a href="index.php?controller=Cliente&action=gestionar" class="quick-action-item">
+                    <a href="index.php?controller=Cliente&action=verClientesEstilista" class="quick-action-item">
                         <div class="action-icon">
                             <i class="bi bi-people"></i>
                         </div>

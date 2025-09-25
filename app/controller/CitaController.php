@@ -1,9 +1,12 @@
 <?php
 require_once 'app/models/cita.php';
+require_once 'app/models/serviceRequest.php';
+require_once 'app/models/usuario.php';
+require_once 'app/models/cliente.php';
 
 class CitaController
 {
-    
+    //ESTO ES PARA CLIENTES
     public function verCitas()
     {
         if (!isset($_SESSION['cliente'])) {
@@ -74,6 +77,13 @@ class CitaController
             exit();
         }
 
+        $id = $_GET['id'] ?? null;
+        if (!$id) {
+            echo "ID no identificado";
+            return;
+        }
+
+        $cita = new Cita();
         if ($cita->cancelar($id)) {
             header("Location: index.php?controller=Cita&action=verCitas");
             exit();
@@ -82,6 +92,138 @@ class CitaController
         }
     }
 
+    //ESTO ES PARA ESTILISTAS
+    public function verCitasEstilista()
+    {
+        if (!isset($_SESSION['usuario'])) {
+        header('Location: index.php?controller=Home&action=index');
+        exit();
+        }
+
+        // Tomamos el id del estilista logueado
+        $userId = $_SESSION['usuario']['id'];
+        $citaModel = new Cita();
+
+        // Ahora traemos citas por estilista (usuario)
+        $citas = $citaModel->obtenerCitasPorUsuario($userId);
+
+        $citaSeleccionada = null;
+        if (isset($_GET['id'])) {
+            $citaSeleccionada = $citaModel->obtenerCitaPorId($_GET['id']);
+        } elseif (!empty($citas)) {
+            $citaSeleccionada = $citas[0];
+        }
+
+        $vista = 'app/views/citas/verCitaEstilista.php';
+        require 'app/views/users/layout.php';
+    }
+
+    public function agendarCitaEstilista()
+    {
+        if (!isset($_SESSION['usuario'])) {
+            header("Location: index.php?controller=Home&action=index");
+            exit();
+        }
+
+        $citaModel = new Cita();
+        $clientes = $citaModel->obtenerClientes();
+        $servicios = $citaModel->obtenerServicios();
+        $estilistas = $citaModel->obtenerEstilistas();
+
+        $vista = 'app/views/citas/agendarCitaEstilista.php';
+        require 'app/views/users/layout.php';
+    }
+
+    public function guardarCitaEstilista()
+    {
+        if (!isset($_SESSION['usuario'])) {
+            header("Location: index.php?controller=Home&action=index");
+            exit();
+        }
+
+        $data = [
+            'clientId' => $_POST['clientId'] ?? '',
+            'serviceId' => $_POST['serviceId'] ?? '',
+            'userId' => $_POST['userId'] ?? '',
+            'appointmentDateTime' => $_POST['appointmentDateTime'] ?? '',
+            'appointmentStatus' => "pending",
+            'notes' => $_POST['notes'] ?? ''
+        ];
+        $cita = new Cita();
+        if ($cita->guardar($data)) {
+            header("Location: index.php?controller=User&action=index");
+            exit();
+        } else {
+            echo "<script>alert('Error al agendar la cita');window.history.back();</script>";
+        }
+    }
+
+    public function editarCitaEstilista()
+    {
+        if (!isset($_GET['id'])) {
+            header("Location: index.php?controller=Cita&action=verCitasEstilista");
+            exit();
+        }
+
+        $id = $_GET['id'];
+        $rol = $_SESSION['usuario']['rol'] ?? '';
+
+        $citaModel = new Cita();
+        $clienteModel = new Cliente();
+        $servicioModel = new ServiceRequest();
+        $usuarioModel = new Usuario();
+
+        $cita = $citaModel->traerCitaPorId($id);
+        $clientes = $citaModel->obtenerClientes();
+        $servicios = $citaModel->obtenerServicios();
+        $usuarios = $citaModel->obtenerEstilistas();
+
+        $vista = 'app/views/citas/editarCitaEstilistas.php';
+        require 'app/views/users/layout.php';
+    }
+
+    public function actualizarCitaEstilista()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $rol = $_SESSION['usuario']['rol'] ?? '';
+            $data = $_POST;
+
+            $citaModel = new Cita();
+            $resultado = $citaModel->actualizar($data, $rol);
+
+            if ($resultado) {
+                $_SESSION['success'] = "Cita actualizada correctamente.";
+            } else {
+                $_SESSION['error'] = "Error al actualizar la cita.";
+            }
+
+            header("Location: index.php?controller=Cita&action=verCitasEstilista");
+            exit();
+        }
+    }
+
+    public function cancelarCitaEstilista()
+    {
+        if (!isset($_SESSION['usuario'])) {
+            header('Location: index.php?controller=Home&action=index');
+            exit();
+        }
+
+        $id = $_GET['id'] ?? null;
+        if (!$id) {
+            echo "ID no identificado";
+            return;
+        }
+
+        $cita = new Cita();
+        if ($cita->cancelar($id)) {
+            header("Location: index.php?controller=Cita&action=verCitasEstilista");
+            exit();
+        } else {
+            echo "<script>alert('Error al cancelar la cita'); window.history.back();</script>";
+        }
+    }
+    /////////////
     public function index()
     {
 
@@ -127,7 +269,7 @@ class CitaController
             require_once 'app/models/Cliente.php';
             $clienteModel = new Cliente();
             $clientes = $clienteModel->obtenerTodo();
-        }
+        } 
 
         $vista = 'app/views/citas/crearCitas.php';
         $titulo = 'Crear citas';

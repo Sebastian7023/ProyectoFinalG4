@@ -14,7 +14,7 @@ class LoginController
 
     public function autenticar()
     {   
-        $usuario = new Usuario();
+        /* $usuario = new Usuario();
         $data = $usuario->login($_POST['email'],$_POST['userPassword']);
         
         if ($data){
@@ -26,6 +26,20 @@ class LoginController
             
             header("Location: index.php?controller=User&action=index");          
             
+        } else {
+            $_SESSION['error_login'] = 'Credenciales incorrectas';
+            header("Location: index.php?controller=Login&action=login");S
+            exit();
+        }  */
+
+        $usuario = new Usuario();
+        $data = $usuario->login($_POST['email']);
+
+        if ($data && hash('sha256', $_POST['userPassword']) === $data['userPassword']) {
+            $_SESSION['usuario'] = $data;
+            $_SESSION['userName'] = $data['userName'];
+            header("Location: index.php?controller=User&action=index");
+            exit();
         } else {
             $_SESSION['error_login'] = 'Credenciales incorrectas';
             header("Location: index.php?controller=Login&action=login");

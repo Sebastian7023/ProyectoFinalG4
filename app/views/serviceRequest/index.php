@@ -14,8 +14,8 @@
     <div class="container-fluid py-4">
         
         <div class="d-flex justify-content-between align-items-center mb-4">
-            <a href="index.php" class="btn btn-outline-secondary">
-                <i class="bi bi-arrow-left me-1"></i> Volver al inicio
+            <a href="index.php?controller=User&action=index" class="btn btn-outline-secondary">
+                <i class="bi bi-arrow-left me-1"></i> Volver al dashboard
             </a>
             <h1 class="mb-0 flex-grow-1 text-center text-pink">
                 <i class="bi bi-scissors me-2"></i>Administrar Servicios

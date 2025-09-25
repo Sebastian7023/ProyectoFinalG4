@@ -49,4 +49,17 @@ class Cliente
         $smt->execute(['dni' => $dni]);
         return $smt->fetch(PDO::FETCH_ASSOC);
     }
+
+    public function obtenerClientesPorEstilista($userId)
+    {
+         $sql = "SELECT c.id, c.dni, c.fullName, c.phone, c.email, MAX(a.appointmentDateTime) AS appointmentDateTime
+            FROM client c
+            JOIN appointment a ON c.id = a.clientId
+            WHERE a.userId = :userId
+            GROUP BY c.id, c.dni, c.fullName, c.phone, c.email
+            ORDER BY appointmentDateTime DESC";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([':userId' => $userId]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

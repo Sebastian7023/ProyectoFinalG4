@@ -95,7 +95,7 @@ class UserController
         }
 
         // Encriptar la contraseña
-        $data['userPassword'] = password_hash($data['userPassword'], PASSWORD_DEFAULT);
+        /* $data['userPassword'] = password_hash($data['userPassword'], PASSWORD_DEFAULT); */
 
         // Guardar en la base de datos
         if ($this->usuario->crear($data)) {

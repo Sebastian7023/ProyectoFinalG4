@@ -46,7 +46,7 @@
                         <textarea class="form-control" id="comentario" name="reviewComment" rows="4" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Enviar Reseña</button>
-                    <a href="index.php?controler=Home&action=index" id="review-btn" class="bi bi-door-closed-fill"> 
+                    <a href="index.php?controller=User&action=index" id="review-btn" class="bi bi-door-closed-fill"> 
                         Cancelar Reseña
                     </a>
                 </form>

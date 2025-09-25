@@ -33,7 +33,7 @@ class LoginClienteController
     {
         unset($_SESSION['cliente']);
         session_destroy();
-        header("Location: index.php?controller=LoginCliente&action=login");
+        header("Location: index.php?controller=Home&action=index");
         exit();
     }
 }

@@ -118,7 +118,7 @@ class ReviewController {
         $review = new Review();
         if ($review->guardar($data)) {
             // Se ha corregido la redirección para que se dirija al home index
-            header('Location: index.php?controller=Home&action=index'); 
+            header('Location: index.php?controller=User&action=index'); 
             exit();
         } else {
             echo "<script>alert('Error al guardar la valoración');window.history.back();</script>";

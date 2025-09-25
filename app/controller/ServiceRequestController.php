@@ -30,8 +30,17 @@ class ServiceRequestController {
         require __DIR__ . '/../views/serviceRequest/create.php';
     }
 
-    public function edit($id) {
+    public function edit() {
+        $id = $_GET['id'] ?? null;
+
+        if (!$id) {
+            // Manejar error o redirigir si no hay ID
+            header('Location: index.php?controller=ServiceRequest&action=index');
+            exit;
+        }
+
         $service = $this->serviceModel->getById($id);
+
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $data = [
                 'serviceName' => $_POST['serviceName'],
@@ -44,16 +53,22 @@ class ServiceRequestController {
             header('Location: ?controller=ServiceRequest&action=index');
             exit;
         }
+
         require __DIR__ . '/../views/serviceRequest/edit.php';
     }
 
     // Activar o desactivar un servicio
-    public function toggleAvailable($id) {
-        $service = $this->serviceModel->getById($id);
-        if ($service) {
-            $newStatus = $service['isAvailable'] ? 0 : 1;
-            $this->serviceModel->setAvailable($id, $newStatus);
+    public function toggleAvailable() {
+        $id = $_GET['id'] ?? null;
+
+        if ($id) {
+            $service = $this->serviceModel->getById($id);
+            if ($service) {
+                $newStatus = $service['isAvailable'] ? 0 : 1;
+                $this->serviceModel->setAvailable($id, $newStatus);
+            }
         }
+
         header('Location: ?controller=ServiceRequest&action=index');
         exit;
     }

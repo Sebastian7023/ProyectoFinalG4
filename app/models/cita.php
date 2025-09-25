@@ -49,6 +49,15 @@ class Cita
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 
+    ///PARA EDITAR CITAS EN EL DASHBOARD DE ESTILISTAS
+    public function traerCitaPorId($id)
+    {
+        $sql = "SELECT * FROM appointment WHERE id = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute([':id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+
     public function obtenerServicios()
     {
         $sql = "SELECT id, serviceName FROM serviceRequest WHERE isAvailable = 1";
@@ -59,6 +68,13 @@ class Cita
     public function obtenerEstilistas()
     {
         $sql = "SELECT id, fullName FROM users WHERE rol = 'Estilista' AND isActive = 1";
+        $stmt = $this->db->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function obtenerClientes()
+    {
+        $sql = "SELECT id, fullName FROM client";
         $stmt = $this->db->query($sql);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -88,15 +104,16 @@ class Cita
     // Estilista: solo sus citas
     public function obtenerCitasPorUsuario($userId)
     {
-        $sql = "SELECT a.id, a.appointmentDateTime, a.appointmentStatus, a.notes,
-                       c.fullName AS cliente,
-                       s.serviceName AS servicio,
-                       u.fullName AS estilista
+       $sql = "SELECT a.id, a.appointmentDateTime, a.appointmentStatus, a.notes,
+                   c.fullName AS clienteNombre,
+                   s.serviceName AS servicioNombre,
+                   u.fullName AS usuarioNombre
                 FROM appointment a
                 JOIN client c ON a.clientId = c.id
                 JOIN serviceRequest s ON a.serviceId = s.id
                 JOIN users u ON a.userId = u.id
-                WHERE a.userId = :userId";
+                WHERE a.userId = :userId
+                ORDER BY a.appointmentDateTime ASC";
         $stmt = $this->db->prepare($sql);
         $stmt->execute([':userId' => $userId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

@@ -11,10 +11,10 @@
     </a>
 
     <!-- Botón para añadir reseñas - FUERA de la sección de testimonios -->
-    <a href="index.php?controller=Review&action=index" class="review-btn" title="Añadir reseña">
+    <!-- <a href="index.php?controller=Review&action=index" class="review-btn" title="Añadir reseña">
         <i class="bi bi-chat-square-text"></i>
         <span>Dejar Reseña</span>
-    </a>
+    </a> -->
 
     <!-- Hero Section -->
     <section class="hero-section" id="inicio">
