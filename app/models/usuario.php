@@ -32,7 +32,6 @@ class Usuario
     public function crear($data)
     {
         $data['userPassword'] = hash('256', $data['userPassword']);
-
         $sql = "INSERT INTO users (userName, userPassword, fullName, email, rol, specialty, isActive) 
             VALUES (:userName, :userPassword, :fullName, :email, :rol, :specialty, :isActive)";
 
@@ -127,6 +126,14 @@ class Usuario
             'isActive' => $isActive,
             'id' => $id
         ]);
+
+    }
+
+    public function obtenerEstilistas()
+    {
+        $sql = "SELECT id, fullName FROM users WHERE rol = 'estilista' AND isActive = 1";
+        $stmt = $this->db->query($sql);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }   
 
     public function listarEstilistas()

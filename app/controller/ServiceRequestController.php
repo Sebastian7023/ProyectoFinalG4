@@ -30,20 +30,6 @@ class ServiceRequestController {
         require __DIR__ . '/../views/serviceRequest/create.php';
     }
 
-
-    public function edit() {
-        $id = $_GET['id'] ?? null;
-        if (!$id) {
-            header('Location: ?controller=ServiceRequest&action=index');
-            exit;
-        }
-        
-        $service = $this->serviceModel->getById($id);
-        if (!$service) {
-            header('Location: ?controller=ServiceRequest&action=index');
-            exit;
-        }
-        
     public function edit($id) {
         $service = $this->serviceModel->getById($id);
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
